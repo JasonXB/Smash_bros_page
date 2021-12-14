@@ -1,0 +1,86 @@
+// Colors
+$nintendo-red: #f70018;
+$dark-red: #ac000d;
+$textbox-gray: #efefef;
+$navbar-shadow: #dadada;
+// Footer gradient involves following 2
+$dark-gray: #3b3b3b;
+$text-gray: #484848;
+
+// Mixins
+@mixin wallpaper {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/src/images/showcase/logowall.jpg");
+}
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@mixin vertical-center {
+  display: flex;
+  align-items: center; /* vertically centers an object if used on its container */
+}
+@mixin styleDigitalButton {
+  @include flex-row;
+  justify-content: space-between;
+  width: 100%;
+  height: 4.8rem;
+  color: white;
+  background-color: $nintendo-red;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding-inline: 1.8rem;
+  padding-block: 1.6rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+@mixin titleText_mobile {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+@mixin titleText_desktop {
+  font-size: 2.1rem;
+  font-weight: 500;
+}
+
+@mixin font_size16 {
+  font-size: 1.6rem;
+}
+// Mixins for the details section of the site
+@mixin titleOffset {
+  margin-left: 4.25rem;
+}
+@mixin default_padding {
+  padding: 1.44rem;
+}
+@mixin grayBackground {
+  background: $textbox-gray;
+}
+
+@mixin headerStyling($colorChoice) {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: $colorChoice;
+  margin-bottom: 1.6rem;
+  @media (min-width: 770px) {
+    font-size: 2.8rem;
+  }
+}
+
+@mixin linebreak {
+  border: 0;
+  height: 1px;
+  background: rgb(202, 202, 202);
+  width: 100%;
+  margin-block: 7rem;
+}
+
+@mixin darkfilter {
+  filter: brightness(70%);
+}

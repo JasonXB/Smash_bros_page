@@ -1,0 +1,91 @@
+@import "../../helpers/partials";
+
+//^ Main sub-section container (for the Nintendo Online service)
+.online {
+  //@ MOBILE STYLING:
+  @include grayBackground();
+  padding: 1.44rem;
+  margin-top: 1.6rem;
+  // Nintendo Online SVG
+  & > svg {
+    height: 5.55rem;
+    margin-bottom: 3.2rem;
+  }
+  // Sizing the ">" arrow svg
+  a svg {
+    width: 1.6rem;
+  }
+  // "Play online, access classic Super NES™ games..."
+  & > p:first-of-type {
+    @include font_size16();
+    margin-bottom: 3.2rem;
+  }
+  // Learn More >
+  & > a {
+    @include flex-row();
+    @include font_size16();
+    margin-bottom: 3.2rem;
+    span {
+      margin-right: 0.8rem;
+    }
+  }
+  // "Learn More >" on hover
+  & > a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.8rem; // move the underline lower
+    text-decoration-thickness: 0.2rem;
+    text-decoration-color: $text-gray;
+  }
+  // "This game supports"
+  & > p:nth-of-type(2) {
+    @include font_size16();
+    @include titleText_mobile();
+    margin-bottom: 1.6rem;
+  }
+  & > div > a {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 1rem;
+    margin-right: 1rem;
+    background: $nintendo-red;
+    color: white;
+    border-radius: 0.5rem;
+  }
+  //@ DESKTOP STYLING:
+  @media (min-width: 570px) {
+    & > p:nth-of-type(2) {
+      @include titleText_desktop();
+    }
+  }
+  @media (min-width: 770px) {
+    grid-area: d;
+    margin-block: 0;
+    // Create a grid layout for this subsection
+    display: grid;
+    grid-template-columns: 16% 40% 20%;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+      "a b c"
+      "d e .";
+    gap: 3.2rem;
+    align-items: center;
+    // Nintendo Online SVG
+    & > svg {
+      width: 100%;
+      margin-bottom: 0;
+    }
+    // "Play online, access classic Super NES™ games..."
+    & > p:first-of-type {
+      margin-bottom: 0;
+    }
+    // Learn More >
+    & > a {
+      margin-bottom: 0;
+    }
+    // "This game supports"
+    & > p:nth-of-type(2) {
+      margin-bottom: 0;
+    }
+  }
+}

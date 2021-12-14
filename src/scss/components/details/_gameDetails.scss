@@ -1,0 +1,59 @@
+@import "../../helpers/partials";
+
+//^ Main sub-section container
+// Details regarding release date, genre, publisher ... etc
+.game-info {
+  //@ MOBILE STYLING:
+  svg {
+    width: 2.8rem; // sets a regular width for all svg's
+    min-width: 2.8rem; // prevents svgs from shrinking when viewport's compressed
+    margin-right: 1.45rem;
+  }
+  li:nth-child(odd) {
+    @include grayBackground;
+  }
+  // Style each list item in the game-info sub-section
+  li {
+    @include flex-row; // arrange svg and text horizontally
+    padding: 1.45rem;
+    // Style the words beside each SVG
+    p {
+      @include flex-column;
+      align-items: flex-start;
+    }
+    span:nth-of-type(1) {
+      margin-right: 2.8rem;
+      @include titleText_mobile;
+    }
+    span:nth-of-type(2) {
+      font-size: 1.6rem;
+    }
+  }
+  //@ DESKTOP STYLING:
+  @media (min-width: 570px) {
+    // Style the words beside each SVG
+    li span:nth-of-type(1) {
+      @include titleText_desktop;
+    }
+    li p {
+      @include flex-row;
+    }
+    // Fix the max-width issue with wrapped text
+    .supported-langs {
+      width: min-content;
+    }
+  }
+  @media (min-width: 770px) {
+    @mixin offsetRight {
+      margin-right: 0.8rem;
+    }
+    @mixin offsetLeft {
+      margin-left: 0.8rem;
+    }
+    grid-area: a;
+    // Create a grid inside the _folderSum grid
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem;
+  }
+}

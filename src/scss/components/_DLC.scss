@@ -1,0 +1,174 @@
+@import "../helpers/partials"; // contains scss variables and mixins
+
+.DLC__background {
+  grid-column: 1/-1;
+  grid-row: 6/7;
+  @include wallpaper;
+}
+section.DLC {
+  grid-column: 2/3;
+  grid-row: 6/7;
+  margin-top: 4.8rem;
+  padding-bottom: 2.8rem;
+
+  // "DLC fighters available for purchase"
+  // "82 characters clash in the ultimate crossover!""
+  h2:first-of-type,
+  h2:nth-of-type(2) {
+    @include headerStyling(white);
+    margin-bottom: 1.6rem;
+  }
+
+  // Styling each character container
+  .DLC__a {
+    width: 100%;
+    height: 24vw;
+    // overflow-y: hidden;
+    @include flex-row;
+    span {
+      font-weight: 700;
+      margin-right: 0.8rem;
+      margin-left: 2rem;
+      color: white;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &:hover {
+      background: rgba(255, 255, 255, 0);
+      border: 2px solid white
+    }
+  }
+  // Fighter number
+  .DLC__a > span:nth-of-type(1) {
+    font-size: 2.4rem;
+  }
+  // Fighter name
+  .DLC__a > span:nth-of-type(2) {
+    font-size: 1.8rem;
+  }
+  // Linear gradients for each fighter slot
+
+  .DLC__a--70 {
+    background-image: linear-gradient(80deg, black, 55%, #04a17c);
+    img {
+      object-position: 0 15%;
+      width: 40%;
+      margin-inline: auto;
+    }
+  }
+  .DLC__a--71 {
+    background-image: linear-gradient(80deg, black, 55%, #890d00);
+    img {
+      object-position: 0 5%;
+    }
+  }
+  .DLC__a--72 {
+    background-image: linear-gradient(80deg, black, 55%, #cdb5f2);
+    img {
+      object-position: 0% 5%;
+      margin-right: 15%;
+    }
+  }
+  .DLC__a--73 {
+    background-image: linear-gradient(80deg, black, 55%, #f0ba47);
+    img {
+      object-position: 0 35%;
+    }
+  }
+  .DLC__a--74 {
+    background-image: linear-gradient(80deg, black, 55%, #6eb4fe);
+    img {
+      object-position: 0 0%;
+    }
+  }
+  .DLC__a--75 {
+    background-image: linear-gradient(80deg, black, 55%, #8dd7a9);
+    img {
+      object-position: 0 5%;
+    }
+  }
+  .DLC__a--76 {
+    background-image: linear-gradient(80deg, black, 55%, #ebec4d);
+    img {
+      object-position: 0 18%;
+      margin-left: 15%;
+    }
+  }
+  .DLC__a--77 {
+    background-image: linear-gradient(80deg, black, 55%, #54b8f3);
+    img {
+      object-position: 0 5%;
+      margin-right: 20%;
+    }
+  }
+  .DLC__a--78 {
+    background-image: linear-gradient(80deg, black, 55%, #c6e0e0);
+    img {
+      object-position: 0 5%;
+    }
+  }
+  .DLC__a--7980 {
+    background-image: linear-gradient(80deg, black, 55%, #52c6a5);
+    img {
+      object-position: 0 0;
+    }
+  }
+  .DLC__a--80 {
+    background-image: linear-gradient(80deg, black, 55%, #a62419);
+    img {
+      object-position: 0 5%;
+    }
+  }
+  .DLC__a--81 {
+    background-image: linear-gradient(80deg, black, 55%, #ff5350);
+    img {
+      object-position: 5% 0;
+      margin-left: 0%;
+    }
+  }
+  .DLC__a--82 {
+    background-image: linear-gradient(80deg, black, 55%, #fbf3bd);
+    img {
+      object-position: 0 0;
+      margin-left: 10%;
+    }
+  }
+
+  @media (min-width: 600px) {
+    // Change layout so we have 2 character slots per row
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(6, 10.2vw);
+      gap: 0.8rem;
+    }
+    // Change height for all fighter slots
+    .DLC__a {
+      height: 100%;
+    }
+    // Fighter number
+    .DLC__a > span:nth-of-type(1) {
+      font-size: 2rem;
+    }
+    // Fighter name
+    .DLC__a > span:nth-of-type(2) {
+      font-size: 1.6rem;
+    }
+    .DLC__a--73 {
+      background-image: linear-gradient(80deg, black, 55%, #f0ba47);
+      img {
+        object-position: 0 25%;
+      }
+    }
+  }
+  @media (min-width: 1000px) {
+    // Change layout so we have 3 character slots per row
+    ul {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: repeat(4, 12rem);
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@import "../helpers/partials";
+@import "../helpers/showcase";
+
+//@ MOBILE CODE:
+.showcase__div--desktop {
+  display: none;
+}
+.showcase__div {
+  // Super Smash Bros Ultimate"
+  & > h1 {
+    @include styleTitle();
+  }
+  // "Available now"
+  & > p:nth-of-type(1) {
+    font-size: $smallTextSize;
+    margin-bottom: 1.4rem;
+  }
+  // 59.99
+  & > p:nth-of-type(2) {
+    @include stylePrice();
+  }
+  // "Eligible for up to 300 points"
+  & > p:nth-of-type(3) {
+    @include style300Pts();
+  }
+  & > a {
+    @include styleDigitalButton();
+  }
+  // "Add to wishlist"
+  .showcase--wishlist {
+    @include styleWishlist;
+  }
+}
+
+
+//^ MAIN PARENT CONTAINER
+.showcase {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  // "Nintendo Switch"
+  & > p:first-of-type {
+    font-size: 1.6rem;
+    text-decoration: $nintendo-red underline;
+    margin-block: 1.4rem;
+  }
+  //@ DESKTOP CODE:
+
+  @media (min-width: 770px) {
+    .showcase__div {
+      & > h1,
+      & > p:nth-of-type(2) {
+        font-size: 2.8rem;
+      }
+    }
+
+    // Render different HTML for one section on larger screens
+    .showcase__div {
+      display: none;
+    }
+    .showcase__div--desktop {
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "a b c d"
+        "e e e e";
+
+      .showcase--block1 {
+        grid-area: a;
+        // Super Smash Bros Ultimate"
+        h1 {
+          @include styleTitle;
+        }
+        // "Available now"
+        & > p:nth-of-type(1) {
+          font-size: $smallTextSize;
+          margin-bottom: 1.4rem;
+        }
+      }
+      // 59.99
+      .showcase--price {
+        grid-area: c;
+        @include stylePrice;
+        margin-top: 0;
+      }
+
+      .showcase--block2 {
+        grid-area: d;
+        // Buy digital
+        a {
+          @include styleDigitalButton();
+        }
+        & > p {
+          @include style300Pts();
+        }
+      }
+      // Add to Wishlist
+      .showcase--wishlist {
+        @include styleWishlist;
+      }
+    }
+  }
+  @media (min-width: 1300px) {
+    .showcase--block2 > a > span {
+      margin-right: 10rem;
+    }
+  }
+}

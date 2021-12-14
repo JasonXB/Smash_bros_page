@@ -1,0 +1,169 @@
+@import "../helpers/partials"; // contains scss variables and mixins
+@import "../helpers/burger"; // contains styling for burger icon
+@import "../helpers/navbar"; //  contains scss variables
+
+//@ MOBILE STYLING AREA 1
+.navbar__object--nintendo {
+  height: $navbar1_height; // set nintendo SVG height to the height of the navbar
+}
+.navbar__object {
+  width: 1.8rem; // change size of svg
+  margin-right: 0.35rem; // right of SVGs
+  margin-left: $gamenav_small_margin; // left of SVGs
+}
+
+.nav__link {
+  @include flex-row; // center the SVG's and anchors vertically
+  & > * {
+    margin: 0.45rem;
+  }
+}
+
+.navbar2 {
+  height: $navbar2_height;
+  background-color: white;
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  border-top: 1px solid rgb(224, 224, 224);
+  & > a {
+    display: block;
+    @include flex-row;
+  }
+}
+
+//^ Main <section> parent container
+.navbar {
+  //@ MOBILE STYLING AREA 2: (last)
+  height: $navbar1_height; // changes @ 77rem
+  background-color: white;
+  font-size: 1.4rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+
+  // Vertically center the burger icon (must be redone when navbar height increases at 77rem)
+  #burger {
+    margin-top: calc(4.6rem / 4); // must equal navbar-height / 4
+    margin-inline: 1.5rem;
+    grid-column: 4/5; // position burger as last item on navbar pt 1 grid
+  }
+  .nav__link--support,
+  .nav__link--wishlist {
+    display: none; // hide support and wishlist nav links on small screens
+  }
+  .nav__link--login {
+    grid-column: 3/4; // position login anchor as 2nd last item on navbar pt 1 grid
+  }
+  //@ DESKTOP STYLING:
+  @media (min-width: 770px) {
+    // Increase the navbar height past 77rem
+    $navbar1_height: 5.4rem;
+    height: $navbar1_height; // must re-state height for an effect
+    // Re-center the burger icon vertically
+    #burger {
+      display: none; // hide burger on larger screens
+    }
+    .navbar__object--nintendo {
+      height: $navbar1_height; // set nintendo SVG height to the height of the navbar
+    }
+    // Insert space between all elements in the navbar
+    grid-template-columns: auto 1fr auto auto auto;
+    // Set margins to space out all the anchors
+    .nav__link--login {
+      margin-right: 2rem;
+      grid-column: 5/6; // position this div on the grid
+    }
+    .nav__link--wishlist {
+      margin-inline: 2rem;
+      grid-column: 4/5; // position this div on the grid
+    }
+    .nav__link--support {
+      grid-column: 3/4; // position this div on the grid
+    }
+    // Show support and wishlist nav links on larger screens
+    .nav__link--support,
+    .nav__link--wishlist {
+      display: flex;
+    }
+    // Make navbar2 a grid inside another grid
+    .navbar2 {
+      display: grid;
+      grid-template-rows: $navbar2_height; // 1 row only
+      grid-template-columns: 1fr repeat(5, auto) 1fr; // 7 girdlines means 7 columns
+      grid-template-areas: "a b c d e f g";
+      // Assign areas based on our template
+      .nav__link--games {
+        grid-area: b;
+      }
+      .nav__link--hardware {
+        grid-area: c;
+      }
+      .nav__link--news {
+        grid-area: d;
+      }
+      .nav__link--play {
+        grid-area: e;
+      }
+      .nav__link--gift {
+        grid-area: f;
+      }
+      // Place a margin between each nav2 anchor on
+      & > * {
+        margin-inline: 1.4rem;
+      }
+    }
+    // Styling <section class="gamenav hide"> when the open class is added via JS event listeners
+    .gamenav.open {
+      background-color: rgba(255, 255, 255, 0.9);
+      height: $subnav_height;
+      @include flex-row;
+
+      // Give it the entire horizontal stretch of .navbar's 3rd row
+      grid-column: 1/-1;
+      grid-row: 3/4;
+      // Use flexbox to arrange the 5 items symmetrically in the center
+      justify-content: center;
+      padding: 1.6rem;
+      border-top: 1px solid #dadada;
+      & > a {
+        @include flex-column; // Stack the SVG and label like a column
+        margin-inline: $gamenav_small_margin;
+        svg {
+          padding: 1.5rem 3.5rem 1.5rem 3.5rem;
+          border: 1px solid #dadada;
+          border-radius: $border-radius;
+          width: 11rem;
+        } // resize the SVG's
+        span {
+          margin: $gamenav_small_margin 0 0 0;
+        } // move label text 7px under the svg
+      }
+    }
+    // Styling <section class="hardwarenav hide"> when the open class is added via JS event listeners
+    .hardwarenav.open {
+      width: 100%;
+      height: $subnav_height;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 1.6rem;
+      @include flex-row;
+      // Give it the entire horizontal stretch of .navbar's 3rd row
+      grid-column: 1/-1;
+      grid-row: 3/4;
+      justify-content: center;
+      border-top: 1px solid #dadada;
+      & > a {
+        @include flex-column; // Stack the SVG and label like a column
+        margin-inline: $gamenav_small_margin;
+        // Size the images
+        img {
+          padding: 1.5rem 6rem 1.5rem 6rem;
+          border: 1px solid #dadada;
+          border-radius: $border-radius;
+          height: 7.4rem; // Size all the images in the hardwarenav
+        }
+        span {
+          margin-top: $gamenav_small_margin;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+// This class gets toggled when you hover/leave over nav__links in the navbar
+.redFilter {
+  filter: invert(10%) sepia(86%) saturate(4999%) hue-rotate(348deg)
+    brightness(116%) contrast(114%);
+} // Turns SVG and text red (use for SVG objects only)
+
+// This class gets added when you click on a "games" or "hardware" tab to focus it
+.redFocusFilter {
+  filter: invert(10%) sepia(86%) saturate(4999%) hue-rotate(348deg)
+    brightness(116%) contrast(114%);
+} // Turns SVG and text red (use for SVG objects only)
+
+// Push animation on hover
+@-webkit-keyframes hvr-push {
+  50% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes hvr-push {
+  50% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.hvr-push {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-push:hover,
+.hvr-push:focus,
+.hvr-push:active {
+  -webkit-animation-name: hvr-push;
+  animation-name: hvr-push;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+/* Icon Grow on hover */
+.hvr-icon-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-icon-grow .hvr-icon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-icon-grow:hover .hvr-icon,
+.hvr-icon-grow:focus .hvr-icon,
+.hvr-icon-grow:active .hvr-icon {
+  -webkit-transform: scale(1.3) translateZ(0);
+  transform: scale(1.3) translateZ(0);
+}
+// give an element the hvr-icon-grow class
+// When that class is hovered, focused, or active, apply the above behaviour
+
+.clickEnlarge:hover{
+  position: absolute; // makes the image jump locations
+  z-index: 15;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: scale(2);	
+}

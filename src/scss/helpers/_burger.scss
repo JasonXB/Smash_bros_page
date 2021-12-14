@@ -1,0 +1,74 @@
+@import "./partials";
+
+// ADJUST THESE TO CUSTOMIZE YOUR BURGER SIZE
+$burger_width: 25px;
+$burger_line_thickness: 5px;
+$vertical_distance1: 9px;
+$vertical_distance2: 18px;
+
+/* Icon 3 */
+#burger {
+  width: $burger_width; 
+  // height: 10px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+#burger span {
+  display: block;
+  position: absolute;
+  height: $burger_line_thickness; 
+  width: 100%;
+  background: $text-gray;
+  // border-radius: 9px; // line radii
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#burger span:nth-child(1) {
+  top: 0px;
+}
+#burger span:nth-child(2),
+#burger span:nth-child(3) {
+  top: $vertical_distance1;
+}
+#burger span:nth-child(4) {
+  top: $vertical_distance2;
+}
+#burger.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+#burger.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+#burger.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#burger.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}

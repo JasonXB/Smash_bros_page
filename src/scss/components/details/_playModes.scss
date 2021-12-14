@@ -1,0 +1,69 @@
+@import "../../helpers/partials";
+//^ Main sub-section container (for the Play Modes)
+.play-modes {
+  //@ MOBILE STYLING:
+  @include flex-column;
+  width: 100%;
+  background-color: $textbox-gray;
+  @include default_padding();
+  margin-block: 1.6rem;
+  svg {
+    height: 4rem;
+  }
+  // "Supported Play Modes"
+  & > span:first-of-type {
+    @include titleText_mobile;
+    margin-bottom: 1.6rem;
+    @include titleOffset();
+    align-self: flex-start;
+  }
+  // Div that holds entire SVG row
+  & > div:first-of-type {
+    width: 100%;
+    @include flex-row;
+    justify-content: space-around;
+  }
+  // Style the sub-containers with the SVG + play mode names
+  & > div > p {
+    @include flex-column;
+    span {
+      width: min-content;
+      text-align: center;
+      font-size: 1.6rem;
+      margin-top: 0.8rem;
+    }
+  }
+  // "Software compatibility paragraph"
+  & > p {
+    font-size: 1.2rem;
+    margin-top: 1.2rem;
+    margin-bottom: 2rem;
+    a {
+      color: $nintendo-red;
+    }
+  }
+  //@ DESKTOP STYLING:
+  @media (min-width: 400px) {
+    div > p {
+      // Undo the word stacking from width:min-content
+      span {
+        width: auto;
+      }
+    }
+  }
+  @media (min-width: 570px) {
+    & > span:first-of-type {
+      @include titleText_desktop;
+    }
+    & > div > p {
+      @include flex-column;
+      span {
+        width: auto;
+      }
+    }
+  }
+  @media (min-width: 770px) {
+    margin-block: 0;
+    grid-area: b;
+  }
+}

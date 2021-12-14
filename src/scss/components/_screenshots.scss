@@ -1,0 +1,181 @@
+$offset_section: 6rem;
+@mixin whiteBorder {
+  border: 2px solid white;
+}
+
+//@ MOBILE STYLING AREA 1:
+.gallery-cell {
+  // Set width of one of carousel panels
+  width: 100%;
+}
+.flickity-page-dots {
+  // make the dark wallpaper extend on top of the carousel dots (2/2)
+  bottom: 3.5rem;
+}
+.flickity-page-dots .dot {
+  // color of dots that are not selected (is set to be semi transparent by default)
+  background: white;
+  // Enlarge size
+  width: 20px;
+  height: 20px;
+}
+.flickity-page-dots .dot.is-selected {
+  background: white;
+  // color of dots when selected
+}
+// Hide < > buttons
+.screenshots button.flickity-button {
+  display: none;
+}
+.screenshots--one > img,
+.screenshots--one > video,
+.screenshots--two > img {
+  @include whiteBorder;
+}
+// Panel in the carousel
+.screenshots--one {
+  // Make this section its own grid
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "a a"
+    "b c"
+    "d e";
+
+  // The embedded Youtube video
+  & > video {
+    grid-area: a;
+    height: 50vw; // make height scale based on vw
+    width: 100%;
+  }
+  // Images 1 through 4
+  img {
+    width: 100%;
+  }
+  img:nth-of-type(1),
+  .mag1 {
+    grid-area: b;
+  }
+  img:nth-of-type(2),
+  .mag2 {
+    grid-area: c;
+  }
+  img:nth-of-type(3),
+  .mag3 {
+    grid-area: d;
+  }
+  img:nth-of-type(4),
+  .mag4 {
+    grid-area: e;
+  }
+}
+// Style panel 2 of the carousel
+// We can assign elements the same grid areas that other elements got in panel 1
+.screenshots--two {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  // Make this section its own grid
+  display: grid;
+  gap: 1rem; // required to keep carousel panel, heights equal
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "a a"
+    "b b";
+  // Container for panel 2 img 1
+  & > img:nth-last-of-type(1),
+  .mag5 {
+    grid-area: a;
+  }
+  // Container for panel 2 img 2
+  & > img:nth-last-of-type(2),
+  .mag6 {
+    grid-area: b;
+  }
+  .img5 {
+    width: 100%;
+    height: 50vw;
+  }
+  .img6 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+// Style the background for the carousel
+.screenshots--background {
+  grid-row: 4/5;
+  grid-column: 1 / -1;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/src/images/showcase/logowall.jpg");
+}
+
+//^ MAIN PARENT CONTAINER
+.screenshots {
+  grid-row: 4/5;
+  grid-column: 2 / -2;
+  // Make the dark wallpaper extend on top of the carousel dots (1/2)
+  padding-bottom: 8rem;
+  // Style the magnifier SVG's
+  svg {
+    margin: auto; // center inside cell
+    width: 25%;
+    max-width: 80px; // cap size at 80px
+    opacity: 0;
+    position: relative; 
+    // ▲ required or else the dark filter that appears on hover blocks this icon
+  }
+  //@ DESKTOP STYLING:
+  @media (min-width: 770px) {
+    .screenshots--one {
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-areas:
+        "a b c"
+        "a d e";
+
+      //% This selector targets .screenshots .screenshots--one(&) > img
+      & > video {
+        // Style the embedded Youtube video
+        grid-area: a;
+        height: 100%; // make height scale based on vw
+        width: 100%;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+      }
+      // Images 1 through 4
+      img:nth-of-type(1) {
+        grid-area: b;
+      }
+      img:nth-of-type(2) {
+        grid-area: c;
+      }
+      img:nth-of-type(3) {
+        grid-area: d;
+      }
+      img:nth-of-type(4) {
+        grid-area: e;
+      }
+    }
+    .screenshots--two {
+      // Make this section its own grid
+      display: grid;
+      gap: 0.8rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "a b";
+
+      .img5 {
+        grid-area: a;
+        height: 100%;
+      }
+      .img6 {
+        grid-area: b;
+        height: 100%;
+      }
+    }
+  }
+}

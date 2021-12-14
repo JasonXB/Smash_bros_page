@@ -1,0 +1,25 @@
+$smallTextSize: 1.6rem;
+$giftguide_margin: 1.4rem;
+@mixin stylePrice {
+  font-size: 2.4rem;
+  margin: 2rem 2rem 2rem 0px;
+  font-weight: 700;
+}
+@mixin styleTitle {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+@mixin style300Pts {
+  font-size: $smallTextSize;
+  margin-bottom: 1.6rem;
+}
+@mixin styleWishlist {
+  @include flex-row;
+  & > span {
+    margin-left: 1.2rem;
+    font-size: $smallTextSize;
+    color: $nintendo-red;
+  }
+}

@@ -1,0 +1,54 @@
+@import "../helpers/partials";
+
+//^ Main <section> parent container
+.characters {
+  margin-bottom: 4.8rem;
+  //@ MOBILE STYLING:
+  // Position this section onto the main webpage grid
+  margin-top: 4.8rem;
+  grid-column: 2/3;
+  grid-row: 4/5;
+  // "New characters and stages join the entire legacy roster"
+  & > article > h2 {
+    @include headerStyling($text-gray);
+  }
+  & > article > p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  & > img {
+    display: none;
+  }
+  a {
+    @include styleDigitalButton();
+    font-size: 1.6rem;
+  }
+  //@ DESKTOP STYLING:
+  @media (min-width: 400px) {
+    a {
+      width: 35rem;
+      font-size: 1.8rem; //! fix
+    }
+  }
+  @media (min-width: 600px) {
+    // Increase h2 font size
+    & > article > h2 {
+      font-size: 2.8rem;
+    }
+  }
+  @media (min-width: 770px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // Reveal the plant image past 770px
+
+    & > img {
+      display: block;
+      grid-column: 2/3;
+      // Cap the image width at 360px
+      width: 100%;
+      max-width: 40rem;
+      justify-self: center; // position plant at end of cell
+      align-self: end;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.poster__background {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/src/images/showcase/logowall.jpg");
+  // Position background in same cell as the poster
+  grid-row: 2/3;
+  grid-column: 1/-1;
+  z-index: -15; // move background behind the poster
+  // Offset it from bottom
+  position: relative;
+  bottom: 10%;
+}
+//^ Main <section> parent container
+.poster {
+  //@ MOBILE STYLING:
+  // Set poster to expand across the entire vw on small screens
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  position: relative;
+  z-index: -9;
+  // position poster below the navbar extensions but still in front of the background image
+  img {
+    width: 100%;
+  }
+  //@ DESKTOP STYLING:
+  @media (min-width: 770px) {
+    // The poster should no longer take up 100vw
+    grid-row: 2/3;
+    grid-column: 2/3;
+    @include flex-row;
+    justify-content: center; // center the poster in its cell horizontally
+    img {
+      margin-top: 2rem; // move image down to avoid navbar row2
+      max-width: 109rem; // cap image size at 109rem
+    }
+  }
+}

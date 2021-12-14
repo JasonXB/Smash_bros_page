@@ -1,0 +1,55 @@
+@import "../../helpers/partials";
+
+//^ Main sub-section container (for the ESRB rating)
+.esrb-rating {
+  //@ MOBILE STYLING:
+  @include default_padding();
+  @include flex-column;
+  align-items: flex-start;
+
+  @include grayBackground;
+  // "ESRB rating" title
+  & > span:first-of-type {
+    @include titleText_mobile;
+    @include titleOffset();
+    align-self: flex-start;
+    margin-bottom: 1.6rem;
+  }
+  object {
+    height: 8.4rem;
+  }
+  // Text beside the ESRB rating
+  & > div:first-of-type {
+    @include flex-row;
+    @include titleOffset();
+    p {
+      @include flex-column;
+      font-size: 1.2rem;
+      padding: 0 0.9rem 0.9rem 0.9rem;
+      width: 18.8rem;
+      height: 8.7rem;
+      span {
+        align-self: flex-start;
+        display: block;
+      }
+      span:first-of-type {
+        padding-bottom: 0.9rem;
+        border-bottom: 2px solid $text-gray;
+      }
+      span:last-of-type {
+        margin-top: 0.9rem;
+      }
+    }
+  }
+  //@ DESKTOP STYLING:
+  @media (min-width: 570px) {
+    // "ESRB rating" title
+    & > span:first-of-type {
+      @include titleText_desktop;
+      @include titleOffset();
+    }
+  }
+  @media (min-width: 770px) {
+    grid-area: c;
+  }
+}

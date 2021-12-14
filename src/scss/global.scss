@@ -1,0 +1,84 @@
+@import "./helpers/partials", "./helpers/animations";
+
+//# GLOBAL STYLES
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  /* Now 10px = 1rem since default size is 16px */
+  /* If their default size is different, this will still scale */
+}
+/* prettier-ignore */
+body,h1,h2,h3,h4,h5,h6,p { margin:0; }
+a {
+  text-decoration: none; /* make anchor links look like normal tex*/
+  color: #484848;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none; /* remove li bullets */
+}
+/* Apply the site's main font*/
+body {
+  font-family: "Outfit", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+  color: $text-gray;
+  background-color: white; /* i like this gray */
+  // background-color: rgb(255, 255, 255);
+}
+
+/* Remove the aspects of a button that we always override anyway*/
+button {
+  border: 0;
+  padding: 0;
+}
+.hide {
+  display: none;
+}
+.reveal {
+  display: block;
+}
+svg,
+object {
+  pointer-events: none;
+}
+main > hr {
+  // Position in the main layout grid
+  grid-row: 10/11;
+  grid-column: 2/3;
+  @include linebreak;
+}
+// Set the main layout/grid for the entire webpage
+main {
+  display: grid;
+  grid-template-columns: 4% 1fr 4%;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto 500px;
+}
+
+@media (min-width: 770px) {
+  main {
+    // Adjust the grid to make room for navbar row 2
+    grid-template-rows: 3.9rem auto auto auto auto auto auto auto auto auto 500px;
+  }
+}
+@media (min-width: 1300px) {
+  // Re-size the main layout past this point
+  main {
+    grid-template-columns: 1fr 118rem 1fr;
+  }
+}
+
+// Import all the partials styling individual sections of our webpage
+@import "./components/navbar", "./components/gamePoster",
+  "./components/characters", "./components/DLC", "./components/screenshots",
+  "./components/showcase", "./components/details/folderSum",
+  "./components/footer", "./components/related";

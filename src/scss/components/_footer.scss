@@ -1,0 +1,19 @@
+@import "../helpers/partials";
+.footer {
+  width: 100%;
+  grid-row: 8/9;
+  grid-column: 2/3;
+  font-size: 1.2rem;
+
+  a {
+    color: $nintendo-red;
+    padding-inline: 1.44rem;
+  }
+  p {
+    margin-block: 2rem;
+    padding-inline: 1.44rem;
+  }
+  hr {
+    @include linebreak;
+  }
+}

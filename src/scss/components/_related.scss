@@ -1,0 +1,109 @@
+@import "../helpers/partials";
+@mixin marginDown {
+  margin-bottom: 1.2rem;
+}
+.released {
+  font-size: 1.6rem;
+  font-weight: 300;
+  @include marginDown();
+}
+.title,
+.cost {
+  font-size: 2.1rem;
+  font-weight: 500;
+  @include marginDown();
+}
+
+//^ MAIN CONTAINER
+.related {
+  grid-column: 2/3;
+  grid-row: 9/10;
+  // "Customers who viewed this game also viewed..."
+  & > h2 {
+    @include headerStyling($text-gray);
+    // padding-inline: 1.44rem;
+  }
+  // Set width of a single game cell
+  .gallery-cell {
+    width: 45%;
+    max-width: 20rem;
+  }
+  // Set image width to width of its cell
+  img {
+    width: 100%;
+    margin-bottom: 0.8rem;
+    border-radius: 0.8rem;
+    &:hover {
+      @include darkfilter;
+    }
+  }
+  // Remove the < > buttons and carousel dots on small screens
+  button.flickity-button,
+  .flickity-page-dots {
+    display: none;
+  }
+  // Set margin left/right for each cell
+  li {
+    margin-inline: 0.8rem;
+  }
+  /* Position the < > buttons for mobile */
+  .flickity-prev-next-button.previous {
+    left: -32px;
+  }
+  .flickity-prev-next-button.next {
+    right: -30px;
+  }
+  @media (min-width: 770px) {
+    // Introduce flickity buttons on larger screens
+    button.flickity-button {
+      display: block;
+    }
+    // Recolor the carousel dots to black, and reposition them
+    .flickity-page-dots {
+      display: block;
+      bottom: -3rem; // moved dots downward
+    }
+    .flickity-page-dots .dot {
+      // color of dots that are not selected (is set to be semi transparent by default)
+      background: black;
+      // Enlarge size
+      width: 20px;
+      height: 20px;
+    }
+    .flickity-page-dots .dot.is-selected {
+      background: black;
+    }
+    li {
+      margin-inline: 1rem; // gap between cells
+    }
+    // increase max size of all cells
+    .gallery-cell {
+      max-width: 28rem;
+    }
+    // Change the before/after buttons
+    /* smaller, dark, rounded square */
+    .flickity-prev-next-button {
+      width: 30px;
+      height: 130px;
+      border-radius: 5px;
+      background: $text-gray;
+    }
+    .flickity-prev-next-button:hover {
+      background: #f90;
+    }
+    /* arrow color */
+    .flickity-prev-next-button .arrow {
+      fill: white;
+    }
+    .flickity-prev-next-button.no-svg {
+      color: white;
+    }
+    /* Position the < > buttons for mobile */
+    .flickity-prev-next-button.previous {
+      left: -50px;
+    }
+    .flickity-prev-next-button.next {
+      right: -50px;
+    }
+  }
+}
