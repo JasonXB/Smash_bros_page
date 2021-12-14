@@ -1,6 +1,4 @@
 export const allClickEvents = function () {
-  // const nintendoRed = "#f70018";
-  // const textGray = "#484848";
   const burgerIcon = document.querySelector("#burger");
   const gamesTab = document.querySelector(".navbar2 > .nav__link--games"); // <div> container
   const gamesNav = document.querySelector(".gamenav"); // <section> container

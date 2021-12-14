@@ -16,6 +16,3 @@ export const animatedZoom = function () {
     screenshot_cell.addEventListener("click", () => zoomProtocol.open());
 };
 
-// The zoom-desktop or zoom-mobile class will get added to img elements on click
-// This behaviour is set in clickEvents.js
-// The medium-zoom library will use these classes to decide which elements to zoom into

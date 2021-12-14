@@ -14025,8 +14025,6 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "allClickEvents", ()=>allClickEvents
 );
 const allClickEvents = function() {
-    // const nintendoRed = "#f70018";
-    // const textGray = "#484848";
     const burgerIcon = document.querySelector("#burger");
     const gamesTab = document.querySelector(".navbar2 > .nav__link--games"); // <div> container
     const gamesNav = document.querySelector(".gamenav"); // <section> container
@@ -14262,9 +14260,7 @@ const animatedZoom = function() {
     const screenshot_cell = document.querySelector(".zoom");
     if (screenshot_cell) screenshot_cell.addEventListener("click", ()=>zoomProtocol.open()
     );
-}; // The zoom-desktop or zoom-mobile class will get added to img elements on click
- // This behaviour is set in clickEvents.js
- // The medium-zoom library will use these classes to decide which elements to zoom into
+};
 
 },{"medium-zoom":"lu5oF","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["cSv3F","3auaO"], "3auaO", "parcelRequireab64")
 
