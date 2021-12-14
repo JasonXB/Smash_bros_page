@@ -14252,9 +14252,7 @@ const animatedZoom = function() {
     console.log("media zoom function ran");
     // Decide margin based on viewport size
     // Some margins look good on mobile but terrible on desktop & vice versa
-    let margin;
-    if (window.innerWidth < 770) margin = 50;
-    else margin = 50;
+    let margin = 50;
     // Set up the medium-zoom click event listener
     const zoomProtocol = _mediumZoomDefault.default(".zoom", {
         background: "rgba(0, 0, 0, 0.5)",
