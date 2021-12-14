@@ -464,9 +464,9 @@ var _mediumZoom = require("medium-zoom");
 var _mediumZoomDefault = parcelHelpers.interopDefault(_mediumZoom);
 var _stable = require("core-js/stable"); // "enables polyfills"
 var _runtime = require("regenerator-runtime/runtime"); //"enables polyfills for async JS"
-var _animatedZoomJs = require("./animatedZoom.js");
 var _clickEventsJs = require("./clickEvents.js"); // must use .js extension or HTML thinks these are HTML files
 var _hoverEventsJs = require("./hoverEvents.js");
+var _animatedZoomJs = require("./animatedZoom.js"); //@ must apply after click events (we change img brightness on click)
 //^ The following code is messing up for some reason, halting the remaining JS code
 if (module.hot) module.hot.accept(); // "enables hot module replacement"
 // Immediately execute the imported code to set the event listeners
@@ -487,7 +487,7 @@ width640.addListener(handleTabletChange);
 // Initial check
 handleTabletChange(width640);
 
-},{"medium-zoom":"lu5oF","core-js/stable":"95FYz","regenerator-runtime/runtime":"1EBPE","./animatedZoom.js":"2Mkey","./clickEvents.js":"TW1yO","./hoverEvents.js":"dbfQE","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"lu5oF":[function(require,module,exports) {
+},{"medium-zoom":"lu5oF","core-js/stable":"95FYz","regenerator-runtime/runtime":"1EBPE","./clickEvents.js":"TW1yO","./hoverEvents.js":"dbfQE","./animatedZoom.js":"2Mkey","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"lu5oF":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 /*! medium-zoom 1.0.6 | MIT License | https://github.com/francoischalifour/medium-zoom */ var _extends = Object.assign || function(target) {
@@ -14019,33 +14019,7 @@ try {
     else Function("r", "regeneratorRuntime = r")(runtime);
 }
 
-},{}],"2Mkey":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "animatedZoom", ()=>animatedZoom
-);
-var _mediumZoom = require("medium-zoom");
-var _mediumZoomDefault = parcelHelpers.interopDefault(_mediumZoom);
-const animatedZoom = function() {
-    // Decide margin based on viewport size
-    // Some margins look good on mobile but terrible on desktop & vice versa
-    let margin;
-    if (window.innerWidth < 770) margin = 50;
-    else margin = 150;
-    // Set up the medium-zoom click event listener
-    const zoomProtocol = _mediumZoomDefault.default(".zoom", {
-        background: "rgba(0, 0, 0, 0.5)",
-        offset: 0,
-        margin
-    });
-    const screenshot_cell = document.querySelector(".zoom");
-    if (screenshot_cell) screenshot_cell.addEventListener("click", ()=>zoomProtocol.open()
-    );
-}; // The zoom-desktop or zoom-mobile class will get added to img elements on click
- // This behaviour is set in clickEvents.js
- // The medium-zoom library will use these classes to decide which elements to zoom into
-
-},{"medium-zoom":"lu5oF","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"TW1yO":[function(require,module,exports) {
+},{}],"TW1yO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "allClickEvents", ()=>allClickEvents
@@ -14267,6 +14241,33 @@ const allHoverEvents = function() {
     });
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["cSv3F","3auaO"], "3auaO", "parcelRequireab64")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"2Mkey":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "animatedZoom", ()=>animatedZoom
+);
+var _mediumZoom = require("medium-zoom");
+var _mediumZoomDefault = parcelHelpers.interopDefault(_mediumZoom);
+const animatedZoom = function() {
+    console.log("media zoom function ran");
+    // Decide margin based on viewport size
+    // Some margins look good on mobile but terrible on desktop & vice versa
+    let margin;
+    if (window.innerWidth < 770) margin = 50;
+    else margin = 50;
+    // Set up the medium-zoom click event listener
+    const zoomProtocol = _mediumZoomDefault.default(".zoom", {
+        background: "rgba(0, 0, 0, 0.5)",
+        offset: 0,
+        margin
+    });
+    const screenshot_cell = document.querySelector(".zoom");
+    if (screenshot_cell) screenshot_cell.addEventListener("click", ()=>zoomProtocol.open()
+    );
+}; // The zoom-desktop or zoom-mobile class will get added to img elements on click
+ // This behaviour is set in clickEvents.js
+ // The medium-zoom library will use these classes to decide which elements to zoom into
+
+},{"medium-zoom":"lu5oF","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["cSv3F","3auaO"], "3auaO", "parcelRequireab64")
 
 //# sourceMappingURL=index.8b7fb9b3.js.map

@@ -3,9 +3,10 @@ import mediumZoom from "medium-zoom";
 if (module.hot) module.hot.accept(); // "enables hot module replacement"
 import "core-js/stable"; // "enables polyfills"
 import "regenerator-runtime/runtime"; //"enables polyfills for async JS"
-import { animatedZoom } from "./animatedZoom.js";
 import { allClickEvents } from "./clickEvents.js"; // must use .js extension or HTML thinks these are HTML files
 import { allHoverEvents } from "./hoverEvents.js";
+import { animatedZoom } from "./animatedZoom.js"; //@ must apply after click events (we change img brightness on click)
+
 // Immediately execute the imported code to set the event listeners
 allClickEvents();
 allHoverEvents();
@@ -26,3 +27,5 @@ function handleTabletChange(e) {
 width640.addListener(handleTabletChange);
 // Initial check
 handleTabletChange(width640);
+
+
