@@ -125,17 +125,29 @@ export const allClickEvents = function () {
   ));
   labels.forEach((el) => {
     el.addEventListener("click", function () {
-      // If you click on this element, add a class to the label elements
-      el.classList.toggle("clicked");
+      // Define template literal strings for up and down arrows
+      const upString = `<svg xmlns="http://www.w3.org/2000/svg" class="up"  width="20px" viewBox="0 0 24 24"><path fill="rgb(22, 96, 160)" d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/></svg>`;
+      const downString = `<svg xmlns="http://www.w3.org/2000/svg" class="down" width="20px" viewBox="0 0 24 24"><path fill="rgb(22, 96, 160)" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>`;
       // Locate the arrow SVG currently displayed
       const arrowSVG = document.querySelector(
         `.${el.classList[0]} label > svg`
       );
+      // Locate the label element that houses that SVG
+      const parentLabel = document.querySelector(`.${el.classList[0]} label`);
+      // Determine whether the SVG displayed now points up or down
       const direction = arrowSVG.classList[0]; // equals "up" or "down"
+
+      // If you click on this element, add a class to the div
+      el.classList.toggle("clicked");
+      // If the arrow points down, switch SVG's so it points up
       if (direction === "down") {
-        // replace the downArrowSVG with an upArrowSVG
-      } else {
-        // replace the upArrowSVG with an downArrowSVG
+        arrowSVG.remove();
+        parentLabel.insertAdjacentHTML("beforeend", upString);
+      }
+      // If the arrow points down, change the SVG so it points up
+      else {
+        arrowSVG.remove();
+        parentLabel.insertAdjacentHTML("beforeend", downString);
       }
     });
   });
