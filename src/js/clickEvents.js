@@ -126,7 +126,7 @@ export const allClickEvents = function () {
     el.addEventListener("click", function () {
       // If you click on this element, add a class to the label elements
       el.classList.toggle("clicked");
-      console.log(9000)
+      console.log(el)
     });
   });
 };

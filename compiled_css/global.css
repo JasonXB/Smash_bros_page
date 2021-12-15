@@ -1554,15 +1554,15 @@ section.linkMenuList .menu1.clicked .slide {
   height: 16.7rem;
 }
 
-section.linkMenuList .menu2.clicked + .slide {
+section.linkMenuList .menu2.clicked .slide {
   height: 24.3rem;
 }
 
-section.linkMenuList .menu3.clicked + .slide {
+section.linkMenuList .menu3.clicked .slide {
   height: 16.7rem;
 }
 
-section.linkMenuList .menu4.clicked + .slide {
+section.linkMenuList .menu4.clicked .slide {
   height: 16.7rem;
 }
 
