@@ -90,7 +90,7 @@ body, h1, h2, h3, h4, h5, h6, p {
 
 a {
   text-decoration: none;
-  /* make anchor links look like normal tex*/
+  /* make anchor links look like normal text*/
   color: #484848;
 }
 
@@ -131,25 +131,15 @@ object {
   pointer-events: none;
 }
 
-main > hr {
-  grid-row: 10/11;
-  grid-column: 2/3;
-  border: 0;
-  height: 1px;
-  background: #cacaca;
-  width: 100%;
-  margin-block: 7rem;
-}
-
 main {
   display: grid;
   grid-template-columns: 4% 1fr 4%;
-  grid-template-rows: auto auto auto auto auto auto auto auto auto auto 500px;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto 500px;
 }
 
 @media (min-width: 770px) {
   main {
-    grid-template-rows: 3.9rem auto auto auto auto auto auto auto auto auto 500px;
+    grid-template-rows: 3.9rem auto auto auto auto auto auto auto auto auto auto 500px;
   }
 }
 
@@ -1362,6 +1352,7 @@ section.DLC .DLC__a--82 img {
 .related {
   grid-column: 2/3;
   grid-row: 9/10;
+  margin-bottom: 8rem;
   /* Position the < > buttons for mobile */
 }
 
@@ -1457,6 +1448,126 @@ section.DLC .DLC__a--82 img {
   }
   .related .flickity-prev-next-button.next {
     right: -50px;
+  }
+}
+
+section.linklist {
+  grid-row: 10/11;
+  grid-column: 2/3;
+  width: 100%;
+  display: none;
+}
+
+@media (min-width: 700px) {
+  section.linklist {
+    padding: 1.44rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  section.linklist a {
+    display: block;
+  }
+  section.linklist .linklist__div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  section.linklist .linklist__div a {
+    margin-bottom: 1rem;
+  }
+  section.linklist .linklist__div a:hover {
+    text-decoration: underline;
+  }
+  section.linklist .linklist__div a:last-of-type {
+    margin-bottom: 0;
+  }
+  section.linklist h6 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  section.linklist a {
+    font-size: 1.2rem;
+  }
+}
+
+div.listBackground {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  div.listBackground {
+    position: relative;
+    z-index: -100;
+    background: #f6f6f6;
+    grid-row: 10/11;
+    grid-column: 1/-1;
+  }
+}
+
+section.linkMenus {
+  grid-row: 10/11;
+  grid-column: 2/3;
+  width: 100%;
+  color: #1660a0;
+  display: grid;
+  grid-template-columns: aut;
+}
+
+section.linkMenus label {
+  display: flex;
+  font-size: 2.2rem;
+  padding: 2rem;
+  background-color: #fafafa;
+  border-block: 2px solid #dedede;
+  justify-content: space-between;
+}
+
+section.linkMenus #touch {
+  position: absolute;
+  opacity: 0;
+  height: 0px;
+}
+
+section.linkMenus .slide {
+  clear: both;
+  width: 100%;
+  height: 0px;
+  margin-block: 0;
+  overflow: hidden;
+  text-align: center;
+  transition: height 0.4s ease;
+}
+
+section.linkMenus .slide li {
+  padding-left: 2rem;
+  display: flex;
+  justify-content: start;
+  padding-top: 1.5rem;
+}
+
+section.linkMenus .slide li:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+section.linkMenus .slide li a {
+  font-size: 1.8rem;
+}
+
+section.linkMenus .slide li a:hover {
+  text-decoration: underline;
+  color: #1660a0;
+}
+
+section.linkMenus .linkMenu1
+#touch:checked + .slide {
+  height: auto;
+}
+
+@media (min-width: 770px) {
+  section.linkMenus {
+    display: none;
   }
 }
 

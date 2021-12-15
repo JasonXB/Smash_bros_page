@@ -1,0 +1,73 @@
+@import "../helpers/partials";
+$menuBlue: rgb(22, 96, 160);
+
+section.linkMenus {
+  // Position into the main website layout
+  grid-row: 10/11;
+  grid-column: 2/3;
+  width: 100%;
+  color: $menuBlue;
+  display: grid;
+  grid-template-columns: auto;
+  label {
+    display: flex;
+    font-size: 2.2rem;
+    padding: 2rem;
+    background-color: #fafafa;
+    border-block: 2px solid #dedede;
+    justify-content: space-between;
+  }
+  // The checkbox that triggers the drop down animation
+  #touch {
+    position: absolute;
+    opacity: 0;
+    height: 0px;
+  }
+
+  .slide {
+    clear: both;
+    width: 100%;
+    height: 0px;
+    margin-block: 0;
+    overflow: hidden;
+    text-align: center;
+    // background-color: beige;
+    transition: height 0.4s ease;
+    li {
+      padding-left: 2rem;
+      display: flex;
+      justify-content: start;
+      padding-top: 1.5rem;
+    }
+    li:last-of-type {
+      margin-bottom: 1.5rem;
+    }
+    // Color the text blue
+    li a {
+      font-size: 1.8rem;
+      &:hover {
+        text-decoration: underline;
+        color: $menuBlue;
+      }
+    }
+  }
+  // Actions for the <ul> when the checkbox is checked
+  // Set size of the drop down height
+  // Must be a hardcoded value or else there's no animation
+  .linkMenu1 #touch:checked + .slide {
+    height: auto; // this is the hardcoded value of height:auto
+  }
+  .linkMenu2 #touch:checked + .slide {
+    height: auto; // this is the hardcoded value of height:auto
+  }
+  .linkMenu3 #touch:checked + .slide {
+    height: auto; // this is the hardcoded value of height:auto
+  }
+  .linkMenu4 #touch:checked + .slide {
+    height: auto; // this is the hardcoded value of height:auto
+  }
+  // Hide this section on screens over 770px
+  @media (min-width: 770px) {
+    display: none;
+  }
+}

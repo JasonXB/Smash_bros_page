@@ -72,8 +72,8 @@ main {
   }
 }
 
-// Import all the partials styling individual sections of our webpage
+// Import all the partials styling individual components of our webpage
 @import "./components/navbar", "./components/gamePoster",
   "./components/characters", "./components/DLC", "./components/screenshots",
   "./components/showcase", "./components/details/folderSum",
-  "./components/footer", "./components/related", "./components/linklist";
+  "./components/footer", "./components/related", "./components/linklist", "./components/linkMenus";

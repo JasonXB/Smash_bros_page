@@ -678,6 +678,7 @@
           </li>
         </ul>
       </section>
+      <!-- The following section ony appears on screens over 770px wide -->
       <section class="linklist">
         <div class="linklist__div linklist__div--games">
           <h6>Games</h6>
@@ -750,6 +751,50 @@
         </div>
       </section>
       <div class="listBackground"></div>
+      <!-- The following section ony appears on screens under 770px wide -->
+      <section class="linkMenus">
+        <div class="linkMenu1">
+          <label for="touch">
+            <span>Games</span>
+            <span>▼</span>
+          </label>
+          <!--Empty div used as a checkbox to trigger the drop down animation-->
+          <input type="checkbox" id="touch" />
+          <ul class="slide">
+            <!-- prettier-ignore -->
+            <li><a href="https://www.nintendo.com/games/game-guide/#filter/:q=&dFR[availability][0]=Coming%20soon">Coming Soon</a></li>
+            <!-- prettier-ignore -->
+            <li><a href="https://www.nintendo.com/games/game-guide/#filter/:q=&dFR[availability][0]=Available%20now&dFR[platform][0]=Nintendo%20Switch">Nintendo Switch</a ></li>
+            <!-- prettier-ignore -->
+            <li><a href="https://www.nintendo.com/games/game-guide/#filter/:q=&dFR[availability][0]=Available%20now&dFR[platform][0]=Wii%20U">Wii U</a ></li>
+            <!-- prettier-ignore -->
+            <li><a href="https://www.nintendo.com/games/game-guide/#filter/:q=&dFR[availability][0]=Available%20now&dFR[platform][0]=Nintendo%203DS">Nintendo 3DS</a></li>
+          </ul>
+        </div>
+        <div class="linkMenu2">
+          <label for="touch">
+            <span>Support</span>
+            <span>▼</span>
+          </label>
+          <!--Empty div used as a checkbox to trigger the drop down animation-->
+          <input type="checkbox" id="touch" />
+          <ul class="slide">
+            <!-- prettier-ignore -->
+            <li> <a href="https://www.nintendo.com/consumer/manuals/warrantytext_eng.jsp" >Warranty</a > </li>
+            <!-- prettier-ignore -->
+            <li> <a href="https://en-americas-support.nintendo.com/app/products/detail/p/989" >Nintendo Switch Support</a > </li>
+            <!-- prettier-ignore -->
+            <li> <a href="https://en-americas-support.nintendo.com/app/products/detail/p/603" >Wii U Support</a > </li>
+            <!-- prettier-ignore -->
+            <li> <a href="https://en-americas-support.nintendo.com/app/products/detail/p/605" >Nintendo 3DS Support</a > </li>
+            <!-- prettier-ignore -->
+            <li> <a href="https://www.nintendo.com/consumer/repair">Repair Help</a> </li>
+            <!-- prettier-ignore -->
+            <li> <a href="https://www.nintendo.com/consumer/recycle.jsp" >Nintendo Product Recycling</a > </li>
+          </ul>
+        </div> 
+
+      </section>
     </main>
     <!-- <div style="height: 180vh">Extendo</div> -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>

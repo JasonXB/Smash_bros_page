@@ -469,11 +469,10 @@ var _hoverEventsJs = require("./hoverEvents.js");
 var _animatedZoomJs = require("./animatedZoom.js"); //@ must apply after click events (we change img brightness on click)
 //^ The following code is messing up for some reason, halting the remaining JS code
 if (module.hot) module.hot.accept(); // "enables hot module replacement"
-// Immediately execute the imported code to set the event listeners
+// Immediately execute the imported code
 _clickEventsJs.allClickEvents();
 _hoverEventsJs.allHoverEvents();
 _animatedZoomJs.animatedZoom(); //@ must apply after click events (we change img brightness on click)
-//% Game screenshots on the carousel
 //% Past 640px, change the text for the login anchor on the navbar
 const loginTextElement = document.querySelector(".nav__link--login span");
 let width640 = window.matchMedia("(min-width: 450px)");
@@ -14260,7 +14259,16 @@ const animatedZoom = function() {
     const screenshot_cell = document.querySelector(".zoom");
     if (screenshot_cell) screenshot_cell.addEventListener("click", ()=>zoomProtocol.open()
     );
-};
+}; //@ HOW TO MAKE ALL IMAGES THE SAME SIZE WHEN ZOOMED INTO
+ /* 
+
+1. Take each image and resize them to the same width while maintaining their original ratio
+   Use this tool: https://redketchup.io/image-resizer
+
+2. Use the medium zoom library normally following these instructions and the above code
+   https://github.com/francoischalifour/medium-zoom#:~:text=import%20the%20library%20as%20a%20module%3A
+   
+*/ 
 
 },{"medium-zoom":"lu5oF","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["cSv3F","3auaO"], "3auaO", "parcelRequireab64")
 
