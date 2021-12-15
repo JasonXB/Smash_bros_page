@@ -14133,7 +14133,11 @@ const allClickEvents = function() {
         el.addEventListener("click", function() {
             // If you click on this element, add a class to the label elements
             el.classList.toggle("clicked");
-            console.log(el);
+            // Change the textContent in the span element
+            const spanTarget = document.querySelector(`.${el.classList[0]} label .arrow`);
+            console.log(spanTarget.innerHTML === "▼");
+            if (spanTarget.innerHTML === "▼") spanTarget.innerHTML = "▲";
+            else spanTarget.innerHTML = "▼";
         });
     });
 };

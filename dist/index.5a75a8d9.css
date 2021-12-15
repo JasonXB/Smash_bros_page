@@ -1521,8 +1521,12 @@ section.linkMenuList label {
   font-size: 2.2rem;
   padding: 2rem;
   background-color: #fafafa;
-  border-block: 2px solid #dedede;
+  border-top: 4px solid #dedede;
   justify-content: space-between;
+}
+
+section.linkMenuList .menu4 {
+  border-bottom: 4px solid #dedede;
 }
 
 section.linkMenuList .slide {
