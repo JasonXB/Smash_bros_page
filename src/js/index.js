@@ -7,12 +7,10 @@ import { allClickEvents } from "./clickEvents.js"; // must use .js extension or 
 import { allHoverEvents } from "./hoverEvents.js";
 import { animatedZoom } from "./animatedZoom.js"; //@ must apply after click events (we change img brightness on click)
 
-// Immediately execute the imported code to set the event listeners
+// Immediately execute the imported code
 allClickEvents();
 allHoverEvents();
 animatedZoom(); //@ must apply after click events (we change img brightness on click)
-
-//% Game screenshots on the carousel
 
 //% Past 640px, change the text for the login anchor on the navbar
 const loginTextElement = document.querySelector(".nav__link--login span");

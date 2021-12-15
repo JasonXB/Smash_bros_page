@@ -20,3 +20,5 @@ NAVBAR UP/DOWN ANIMATION
 
 BUNDLE WHEN YOU'RE DONE
 npx parcel build index.html	
+
+0. Replace all 1.44rem padding with a mixin

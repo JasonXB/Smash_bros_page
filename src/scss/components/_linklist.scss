@@ -1,0 +1,53 @@
+@import "../helpers/partials";
+// This component will be a series of drop down menus on mobile screens
+// On desktop screens, the component will be a simple set of 3 columns
+section.linklist {
+  // Place the linklist section on the main webpage grid
+  grid-row: 10/11;
+  grid-column: 2/3;
+  width: 100%;
+  //@ DESKTOP SECTION
+  @media (min-width: 700px) {
+    padding: 1.44rem; // apply standard component padding
+    // Make the section itself a grid and create equal width columns
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    a {
+      display: block;
+    }
+    // Arrange each linklist__div into a column
+    .linklist__div {
+      @include flex-column;
+      text-align: center;
+      // Give all anchors a margin of 0.5rem except for the ones at the end of the list
+      a {
+        margin-bottom: 1rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      a:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    // Set font sizes for the header and each anchor
+    h6 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    a {
+      font-size: 1.2rem;
+    }
+  }
+}
+div.listBackground {
+  position: relative;
+  z-index: -100;
+  // Set a background color on larger screen only
+  @media (min-width: 700px) {
+    background: #f6f6f6;
+    grid-row: 10/11;
+    grid-column: 1/-1;
+  }
+}

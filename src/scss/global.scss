@@ -18,7 +18,7 @@ html {
 /* prettier-ignore */
 body,h1,h2,h3,h4,h5,h6,p { margin:0; }
 a {
-  text-decoration: none; /* make anchor links look like normal tex*/
+  text-decoration: none; /* make anchor links look like normal text*/
   color: #484848;
 }
 
@@ -51,23 +51,18 @@ svg,
 object {
   pointer-events: none;
 }
-main > hr {
-  // Position in the main layout grid
-  grid-row: 10/11;
-  grid-column: 2/3;
-  @include linebreak;
-}
+
 // Set the main layout/grid for the entire webpage
 main {
   display: grid;
   grid-template-columns: 4% 1fr 4%;
-  grid-template-rows: auto auto auto auto auto auto auto auto auto auto 500px;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto 500px;
 }
 
 @media (min-width: 770px) {
   main {
     // Adjust the grid to make room for navbar row 2
-    grid-template-rows: 3.9rem auto auto auto auto auto auto auto auto auto 500px;
+    grid-template-rows: 3.9rem auto auto auto auto auto auto auto auto auto auto 500px;
   }
 }
 @media (min-width: 1300px) {
@@ -81,4 +76,4 @@ main {
 @import "./components/navbar", "./components/gamePoster",
   "./components/characters", "./components/DLC", "./components/screenshots",
   "./components/showcase", "./components/details/folderSum",
-  "./components/footer", "./components/related";
+  "./components/footer", "./components/related", "./components/linklist";

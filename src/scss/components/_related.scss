@@ -18,6 +18,7 @@
 .related {
   grid-column: 2/3;
   grid-row: 9/10;
+  margin-bottom: 8rem;
   // "Customers who viewed this game also viewed..."
   & > h2 {
     @include headerStyling($text-gray);
