@@ -1,7 +1,6 @@
 import mediumZoom from "medium-zoom";
 
 export const animatedZoom = function () {
-  console.log("media zoom function ran");
   // Decide margin based on viewport size
   // Some margins look good on mobile but terrible on desktop & vice versa
   let margin = 50;

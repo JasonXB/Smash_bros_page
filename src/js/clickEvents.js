@@ -118,5 +118,15 @@ export const allClickEvents = function () {
     if (!isClickInside) removeFocusFromAll();
   });
 
-
+  // prettier-ignore
+  const labels = Array.from(document.querySelectorAll(
+    ".menu1, .menu2 , .menu3 , .menu4"
+  ));
+  labels.forEach((el) => {
+    el.addEventListener("click", function () {
+      // If you click on this element, add a class to the label elements
+      el.classList.toggle("clicked");
+      console.log(9000)
+    });
+  });
 };

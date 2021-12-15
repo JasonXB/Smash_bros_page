@@ -14127,6 +14127,15 @@ const allClickEvents = function() {
         const isClickInside = document.querySelector(".navbar").contains(e.target);
         if (!isClickInside) removeFocusFromAll();
     });
+    // prettier-ignore
+    const labels = Array.from(document.querySelectorAll(".menu1, .menu2 , .menu3 , .menu4"));
+    labels.forEach((el)=>{
+        el.addEventListener("click", function() {
+            // If you click on this element, add a class to the label elements
+            el.classList.toggle("clicked");
+            console.log(9000);
+        });
+    });
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"dbfQE":[function(require,module,exports) {
@@ -14246,7 +14255,6 @@ parcelHelpers.export(exports, "animatedZoom", ()=>animatedZoom
 var _mediumZoom = require("medium-zoom");
 var _mediumZoomDefault = parcelHelpers.interopDefault(_mediumZoom);
 const animatedZoom = function() {
-    console.log("media zoom function ran");
     // Decide margin based on viewport size
     // Some margins look good on mobile but terrible on desktop & vice versa
     let margin = 50;

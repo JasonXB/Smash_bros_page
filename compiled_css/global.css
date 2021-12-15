@@ -1501,16 +1501,17 @@ div.listBackground {
   }
 }
 
-section.linkMenus {
+section.linkMenuList {
   grid-row: 10/11;
   grid-column: 2/3;
   width: 100%;
+  height: auto;
   color: #1660a0;
   display: grid;
   grid-template-columns: auto;
 }
 
-section.linkMenus label {
+section.linkMenuList label {
   display: flex;
   font-size: 2.2rem;
   padding: 2rem;
@@ -1519,13 +1520,7 @@ section.linkMenus label {
   justify-content: space-between;
 }
 
-section.linkMenus #touch {
-  position: absolute;
-  opacity: 0;
-  height: 0px;
-}
-
-section.linkMenus .slide {
+section.linkMenuList .slide {
   clear: both;
   width: 100%;
   height: 0px;
@@ -1535,44 +1530,44 @@ section.linkMenus .slide {
   transition: height 0.4s ease;
 }
 
-section.linkMenus .slide li {
+section.linkMenuList .slide li {
   padding-left: 2rem;
   display: flex;
   justify-content: start;
   padding-top: 1.5rem;
 }
 
-section.linkMenus .slide li:last-of-type {
+section.linkMenuList .slide li:last-of-type {
   margin-bottom: 1.5rem;
 }
 
-section.linkMenus .slide li a {
+section.linkMenuList .slide li a {
   font-size: 1.8rem;
 }
 
-section.linkMenus .slide li a:hover {
+section.linkMenuList .slide li a:hover {
   text-decoration: underline;
   color: #1660a0;
 }
 
-section.linkMenus .linkMenu1 #touch:checked + .slide {
-  height: auto;
+section.linkMenuList .menu1.clicked .slide {
+  height: 16.7rem;
 }
 
-section.linkMenus .linkMenu2 #touch:checked + .slide {
-  height: auto;
+section.linkMenuList .menu2.clicked + .slide {
+  height: 24.3rem;
 }
 
-section.linkMenus .linkMenu3 #touch:checked + .slide {
-  height: auto;
+section.linkMenuList .menu3.clicked + .slide {
+  height: 16.7rem;
 }
 
-section.linkMenus .linkMenu4 #touch:checked + .slide {
-  height: auto;
+section.linkMenuList .menu4.clicked + .slide {
+  height: 16.7rem;
 }
 
 @media (min-width: 770px) {
-  section.linkMenus {
+  section.linkMenuList {
     display: none;
   }
 }
