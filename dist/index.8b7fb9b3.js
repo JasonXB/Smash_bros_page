@@ -14127,17 +14127,16 @@ const allClickEvents = function() {
         const isClickInside = document.querySelector(".navbar").contains(e.target);
         if (!isClickInside) removeFocusFromAll();
     });
+    //% Clicking on the Slide Down Menu elements
     // prettier-ignore
     const labels = Array.from(document.querySelectorAll(".menu1, .menu2 , .menu3 , .menu4"));
     labels.forEach((el)=>{
         el.addEventListener("click", function() {
             // If you click on this element, add a class to the label elements
             el.classList.toggle("clicked");
-            // Change the textContent in the span element
-            const spanTarget = document.querySelector(`.${el.classList[0]} label .arrow`);
-            console.log(spanTarget.innerHTML === "▼");
-            if (spanTarget.innerHTML === "▼") spanTarget.innerHTML = "▲";
-            else spanTarget.innerHTML = "▼";
+            // Locate the arrow SVG currently displayed
+            const arrowSVG = document.querySelector(`.${el.classList[0]} label > svg`);
+            const direction = arrowSVG.classList[0]; // equals "up" or "down"
         });
     });
 };

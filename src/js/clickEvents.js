@@ -118,6 +118,7 @@ export const allClickEvents = function () {
     if (!isClickInside) removeFocusFromAll();
   });
 
+  //% Clicking on the Slide Down Menu elements
   // prettier-ignore
   const labels = Array.from(document.querySelectorAll(
     ".menu1, .menu2 , .menu3 , .menu4"
@@ -126,13 +127,16 @@ export const allClickEvents = function () {
     el.addEventListener("click", function () {
       // If you click on this element, add a class to the label elements
       el.classList.toggle("clicked");
-      // Change the textContent in the span element
-      const spanTarget = document.querySelector(
-        `.${el.classList[0]} label .arrow`
+      // Locate the arrow SVG currently displayed
+      const arrowSVG = document.querySelector(
+        `.${el.classList[0]} label > svg`
       );
-      console.log(spanTarget.innerHTML === "▼");
-      if (spanTarget.innerHTML === "▼") spanTarget.innerHTML = "▲";
-      else spanTarget.innerHTML = "▼";
+      const direction = arrowSVG.classList[0]; // equals "up" or "down"
+      if (direction === "down") {
+        // replace the downArrowSVG with an upArrowSVG
+      } else {
+        // replace the upArrowSVG with an downArrowSVG
+      }
     });
   });
 };
