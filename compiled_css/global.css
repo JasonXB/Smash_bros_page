@@ -1407,7 +1407,7 @@ section.DLC .DLC__a--82 img {
   }
   .related .flickity-page-dots {
     display: block;
-    bottom: -3rem;
+    bottom: -6rem;
   }
   .related .flickity-page-dots .dot {
     background: black;
@@ -1455,7 +1455,8 @@ section.linklist {
 
 @media (min-width: 700px) {
   section.linklist {
-    padding: 1.44rem;
+    margin-top: 6rem;
+    padding: 3.6rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
@@ -1487,12 +1488,9 @@ section.linklist {
   }
 }
 
-div.listBackground {
-  display: none;
-}
-
 @media (min-width: 700px) {
   div.listBackground {
+    margin-top: 6rem;
     position: relative;
     z-index: -100;
     background: #f6f6f6;

@@ -10,7 +10,8 @@ section.linklist {
   display: none;
   //@ DESKTOP SECTION
   @media (min-width: 700px) {
-    padding: 1.44rem; // apply standard component padding
+    margin-top: 6rem;
+    padding: 3.6rem; // apply standard component padding
     // Make the section itself a grid and create equal width columns
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -46,9 +47,10 @@ section.linklist {
 // Add a gray background behidn the link list on desktops only
 div.listBackground {
   // Exclude this on small screens
-  display:none;
+  // display:none;
   // Set a background color on larger screen only
   @media (min-width: 700px) {
+    margin-top: 6rem;
     position: relative;
     z-index: -100;
     background: #f6f6f6;
