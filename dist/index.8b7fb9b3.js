@@ -14027,39 +14027,43 @@ const allClickEvents = function() {
     const burgerIcon = document.querySelector("#burger");
     const gamesTab = document.querySelector(".navbar2 > .nav__link--games"); // <div> container
     const gamesNav = document.querySelector(".gamenav"); // <section> container
-    const gamesArrow = document.querySelector(".nav__link--games > object:last-child");
+    const gamesArrow = document.querySelector(".nav__link--games > svg:last-of-type");
     const hardwareNav = document.querySelector(".hardwarenav"); // the navbar extension that pops up after hitting hardwareTab
     const hardwareTab = document.querySelector(".navbar2 > .nav__link--hardware");
-    const hardwareArrow = document.querySelector(".nav__link--hardware > object:last-child");
+    const hardwareArrow = document.querySelector(".nav__link--hardware > svg:last-of-type");
     const focusableElements = Array.from(document.querySelectorAll(".nav__link:not(.nav__link--games, .nav__link--hardware)") // all elements that highlight red on hover aside from gamesTab and hardwareTab
     );
     // Utility functions
-    const flipArrowDirection = function(objectSVG) {
-        if (objectSVG.data.includes("down.svg")) objectSVG.data = "src/images/navbar/up.svg";
-        else objectSVG.data = "src/images/navbar/down.svg";
-        return;
-    };
-    const setArrowDown = function(objectSVG) {
-        objectSVG.data = "src/images/navbar/down.svg";
+    const flipArrowDirection = function(initialSVG) {
+        const svgParent = initialSVG.closest("a.nav__link, div.nav__link");
+        console.log(svgParent);
+        const upString = `<svg xmlns="http://www.w3.org/2000/svg" class="navbar__object" viewBox="0 0 24 24"><path fill="#484848" d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/></svg>`;
+        const downString = `<svg xmlns="http://www.w3.org/2000/svg" class="navbar__object" viewBox="0 0 24 24"><path fill="#484848" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>`;
+        // If arrow class="down", switch to an upward arrow SVG
+        if (initialSVG.classList.contains("down")) {
+            initialSVG.remove();
+            svgParent.insertAdjacentHTML("beforeend", upString);
+        } else {
+            initialSVG.remove();
+            svgParent.insertAdjacentHTML("beforeend", downString);
+        }
         return;
     };
     // Click event action helper functions
     const resetGamesTab = function() {
         gamesTab.classList.remove("redFocusFilter");
         gamesTab.style.borderBottom = "0px";
-        setArrowDown(document.querySelector(".nav__link--games > object:last-child"));
         gamesNav.classList.remove("open"); // closes the gamenav extension
     };
     const resetHardwareTab = function() {
         hardwareTab.classList.remove("redFocusFilter");
         hardwareTab.style.borderBottom = "0px";
-        setArrowDown(document.querySelector(".nav__link--hardware > object:last-child"));
         hardwareNav.classList.remove("open"); // closes the hardwarenav extension
     };
     const focusGamesTab = function() {
         // Open the nav extension and flip the arrow SVG
         gamesNav.classList.toggle("open"); // open nav extension
-        flipArrowDirection(gamesArrow);
+        // flipArrowDirection(gamesArrow);
         // Apply filter class to gamesTab, and apply a border on the bottom
         gamesTab.classList.add("redFocusFilter");
         gamesTab.style.borderBottom = "3px solid #f70018";
@@ -14072,7 +14076,7 @@ const allClickEvents = function() {
     const focusHardwareTab = function() {
         // Open the nav extension and flip the arrow SVG
         hardwareNav.classList.toggle("open"); // open nav extension
-        flipArrowDirection(hardwareArrow);
+        // flipArrowDirection(hardwareArrow);
         // Apply filter class to hardwareTab, and apply a border on the bottom
         hardwareTab.classList.add("redFocusFilter");
         hardwareTab.style.borderBottom = "3px solid #f70018";
