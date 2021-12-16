@@ -1655,4 +1655,10 @@ section.linkMenuList .menu4.clicked .slide {
   background: white;
   transform: translateX(30rem);
 }
+
+.temp {
+  margin: 200px;
+  height: 50px;
+  width: 100px;
+}
 /*# sourceMappingURL=global.css.map */

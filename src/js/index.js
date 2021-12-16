@@ -26,4 +26,17 @@ width640.addListener(handleTabletChange);
 // Initial check
 handleTabletChange(width640);
 
-
+/*
+window.onscroll = function (e) {
+  // print "false" if direction is down and "true" if up
+  let scrollDirection = this.oldScroll > this.scrollY ? "up" : "down";
+  this.oldScroll = this.scrollY; // edit scroll position
+  if (scrollDirection === "down") {
+    console.log("going down");
+    // Add a class that triggers a slide animation upwards
+  } else if (scrollDirection === "up") {
+    console.log("going up");
+    // Add a class that triggers a slide animation downwards
+  }
+};
+*/
