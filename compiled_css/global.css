@@ -219,21 +219,6 @@ main {
   margin: 0.45rem;
 }
 
-.navbar2 {
-  height: 4rem;
-  background-color: white;
-  grid-column: 1/-1;
-  grid-row: 2/3;
-  border-top: 1px solid #e0e0e0;
-}
-
-.navbar2 > a {
-  display: block;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 .navbar {
   height: 4.6rem;
   background-color: white;
@@ -282,6 +267,19 @@ main {
   .navbar .nav__link--support,
   .navbar .nav__link--wishlist {
     display: flex;
+  }
+  .navbar .navbar2 {
+    height: 4rem;
+    background-color: white;
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    border-top: 1px solid #e0e0e0;
+  }
+  .navbar .navbar2 > a {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   .navbar .navbar2 {
     display: grid;
@@ -1586,5 +1584,59 @@ section.linkMenuList .menu4.clicked .slide {
   section.linkMenuList {
     display: none;
   }
+}
+
+/* Icon 3 */
+#burger {
+  width: 25px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#burger span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: #484848;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+#burger span:nth-child(1) {
+  top: 0px;
+}
+
+#burger span:nth-child(2),
+#burger span:nth-child(3) {
+  top: 9px;
+}
+
+#burger span:nth-child(4) {
+  top: 18px;
+}
+
+#burger.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#burger.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#burger.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+#burger.open span:nth-child(3) {
+  transform: rotate(-45deg);
 }
 /*# sourceMappingURL=global.css.map */

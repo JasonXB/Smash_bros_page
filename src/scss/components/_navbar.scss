@@ -19,18 +19,6 @@
   }
 }
 
-.navbar2 {
-  height: $navbar2_height;
-  background-color: white;
-  grid-column: 1/-1;
-  grid-row: 2/3;
-  border-top: 1px solid rgb(224, 224, 224);
-  & > a {
-    display: block;
-    @include flex-row;
-  }
-}
-
 //^ Main <section> parent container
 .navbar {
   //@ MOBILE STYLING AREA 2: (last)
@@ -84,6 +72,19 @@
     .nav__link--wishlist {
       display: flex;
     }
+
+    //^ NAVBAR 2 STYLING (the 2nd navbar row that's replaced by a scrolling animated menu on mobile)
+    .navbar2 {
+      height: $navbar2_height;
+      background-color: white;
+      grid-column: 1/-1;
+      grid-row: 2/3;
+      border-top: 1px solid rgb(224, 224, 224);
+      & > a {
+        display: block;
+        @include flex-row;
+      }
+    }
     // Make navbar2 a grid inside another grid
     .navbar2 {
       display: grid;
@@ -111,7 +112,8 @@
         margin-inline: 1.4rem;
       }
     }
-    // Styling <section class="gamenav hide"> when the open class is added via JS event listeners
+    //^ STYLING GAMENAV- navbar row 3 option 1 which is hidden by default
+    // An "open" class is added via JS event listeners to reveal it
     .gamenav.open {
       background-color: rgba(255, 255, 255, 0.9);
       height: $subnav_height;
@@ -138,7 +140,8 @@
         } // move label text 7px under the svg
       }
     }
-    // Styling <section class="hardwarenav hide"> when the open class is added via JS event listeners
+    //^ STYLING HARDWARE NAV - navbar row 3 option 2 which is hidden by default
+    // An "open" class is added via JS event listeners to reveal it
     .hardwarenav.open {
       width: 100%;
       height: $subnav_height;
