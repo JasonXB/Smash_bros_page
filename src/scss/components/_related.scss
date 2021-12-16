@@ -81,6 +81,17 @@
     .gallery-cell {
       max-width: 28rem;
     }
+
+    //!
+    /* Position the < > buttons for mobile */
+    .flickity-prev-next-button.previous {
+      display: none;
+    }
+    .flickity-prev-next-button.next {
+      display: none;
+    }
+  }
+  @media (min-width: 1400px) {
     // Change the before/after buttons
     /* smaller, dark, rounded square */
     .flickity-prev-next-button {
@@ -101,10 +112,12 @@
     }
     /* Position the < > buttons for mobile */
     .flickity-prev-next-button.previous {
-      left: -50px;
+      display: block;
+      left: -7rem;
     }
     .flickity-prev-next-button.next {
-      right: -50px;
+      display: block;
+      right: -7rem;
     }
   }
 }

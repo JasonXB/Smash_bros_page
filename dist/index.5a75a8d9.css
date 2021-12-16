@@ -1403,8 +1403,6 @@ section.DLC .DLC__a--82 img {
 
 @media (min-width: 770px) {
   .related {
-    /* smaller, dark, rounded square */
-    /* arrow color */
     /* Position the < > buttons for mobile */
   }
   .related button.flickity-button {
@@ -1428,6 +1426,20 @@ section.DLC .DLC__a--82 img {
   .related .gallery-cell {
     max-width: 28rem;
   }
+  .related .flickity-prev-next-button.previous {
+    display: none;
+  }
+  .related .flickity-prev-next-button.next {
+    display: none;
+  }
+}
+
+@media (min-width: 1400px) {
+  .related {
+    /* smaller, dark, rounded square */
+    /* arrow color */
+    /* Position the < > buttons for mobile */
+  }
   .related .flickity-prev-next-button {
     width: 30px;
     height: 130px;
@@ -1444,10 +1456,12 @@ section.DLC .DLC__a--82 img {
     color: white;
   }
   .related .flickity-prev-next-button.previous {
-    left: -50px;
+    display: block;
+    left: -7rem;
   }
   .related .flickity-prev-next-button.next {
-    right: -50px;
+    display: block;
+    right: -7rem;
   }
 }
 
