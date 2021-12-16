@@ -1639,4 +1639,20 @@ section.linkMenuList .menu4.clicked .slide {
 #burger.open span:nth-child(3) {
   transform: rotate(-45deg);
 }
+
+.mobileSlider {
+  display: grid;
+  grid-template-columns: 1fr 30rem;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  height: 100vh;
+}
+
+.mobileSlider section.sliderColumn {
+  width: 30rem;
+  grid-column: 2/3;
+  background: white;
+  transform: translateX(30rem);
+}
 /*# sourceMappingURL=global.css.map */

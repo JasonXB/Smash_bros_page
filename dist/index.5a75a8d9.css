@@ -1646,5 +1646,12 @@ section.linkMenuList .menu4.clicked .slide {
   transform: rotate(-45deg);
 }
 
+.mobileNav {
+  width: 30rem;
+  background: white;
+  display: grid;
+  grid-template-columns: 1fr 30rem;
+}
+
 /*# sourceMappingURL=global.css.map */
 /*# sourceMappingURL=index.5a75a8d9.css.map */
