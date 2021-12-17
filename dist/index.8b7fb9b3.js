@@ -484,20 +484,22 @@ function handleTabletChange(e) {
 // Register event listener
 width640.addListener(handleTabletChange);
 // Initial check
-handleTabletChange(width640); /*
-window.onscroll = function (e) {
-  // print "false" if direction is down and "true" if up
-  let scrollDirection = this.oldScroll > this.scrollY ? "up" : "down";
-  this.oldScroll = this.scrollY; // edit scroll position
-  if (scrollDirection === "down") {
-    console.log("going down");
-    // Add a class that triggers a slide animation upwards
-  } else if (scrollDirection === "up") {
-    console.log("going up");
-    // Add a class that triggers a slide animation downwards
-  }
+handleTabletChange(width640);
+// Add a class that causes the navbar to slide upwards offscreen or down to its normal position
+window.onscroll = function(e) {
+    let scrollDirection = this.oldScroll > this.scrollY ? "up" : "down";
+    this.oldScroll = this.scrollY;
+    const nav = document.querySelector(".navbar"); // the navbar parent container
+    if (scrollDirection === "up") {
+        // Add a class that triggers a slide animation upwards
+        nav.classList.add("slideDown");
+        nav.classList.remove("slideUp");
+    } else if (scrollDirection === "down") {
+        // Add a class that triggers a slide animation downwards
+        nav.classList.add("slideUp");
+        nav.classList.remove("slideDown");
+    }
 };
-*/ 
 
 },{"medium-zoom":"lu5oF","core-js/stable":"95FYz","regenerator-runtime/runtime":"1EBPE","./clickEvents.js":"TW1yO","./hoverEvents.js":"dbfQE","./animatedZoom.js":"2Mkey","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"lu5oF":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

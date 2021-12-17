@@ -34,7 +34,7 @@
   // opacity: 0;
   //$ Animation start: Leave navbar in its default location
   transform: translateY(0);
-  transition: transform 0.3s; // makes the slide out animation gradual and not-instant
+  transition: transform 0.5s; // makes the slide out animation gradual and not-instant
   //$ Animation end options for mobile
   &.slideUp {
     transform: translateY(-4.6rem);
@@ -65,7 +65,7 @@
     &.slideDown{
       transform: translateY(0);
     } // slide back up to regular position
-    
+
     // Increase the navbar height past 77rem
     $navbar1_height: 5.4rem;
     height: $navbar1_height; // must re-state height for an effect

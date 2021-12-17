@@ -229,7 +229,7 @@ main {
   width: 100%;
   z-index: 15;
   transform: translateY(0);
-  transition: transform 0.3s;
+  transition: transform 0.5s;
 }
 
 .navbar.slideUp {
