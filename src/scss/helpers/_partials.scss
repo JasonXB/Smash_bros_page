@@ -73,12 +73,12 @@ $text-gray: #484848;
   }
 }
 
-@mixin linebreak {
+@mixin linebreak($marginBlock) {
   border: 0;
   height: 1px;
   background: rgb(202, 202, 202);
   width: 100%;
-  margin-block: 7rem;
+  margin-block: $marginBlock;
 }
 
 @mixin darkfilter {

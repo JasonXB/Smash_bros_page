@@ -4,22 +4,42 @@
 
 .mobileSlider {
   // Place the slider menu on the right side of the viewport using grid
-  display: none; //! chamge to display grid
+  display: grid; //! change to display grid
+  margin-top: 4.6rem;
   grid-template-columns: 1fr 30rem;
   width: 100%;
   position: fixed;
   z-index: 10;
   height: 100vh;
-  section.sliderColumn {
+  .overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .navbar2 {
     width: 30rem;
     grid-column: 2/3;
     background: rgba(255, 255, 255, 1);
-    // Place the slider menu offscreen by default
-    transform: translateX(30rem);
+    // transform: translateX(30rem); // place slider menu offscreen by default
+    font-size: 1.6rem;
   }
-}
-.temp1, .temp2 {
-  margin: 200px;
-  height: 50px;
-  width: 100px;
+  .nav__link {
+    padding: 1.2rem; //$ affects spacing between each nav link
+    svg:last-of-type {
+      width: 1.4rem;
+    }
+  }
+  // Style the line break
+  hr {
+    @include linebreak(3rem);
+    // Override a few styles for this menu
+    width: 80%;
+    margin-left: 10%;
+  }
+  @media (min-width: 770px) {
+    .overlay {
+      display: none;
+    }
+    .navbar2 {
+      display: none;
+    }
+  }
 }

@@ -14,6 +14,6 @@
     padding-inline: 1.44rem;
   }
   hr {
-    @include linebreak;
+    @include linebreak(7rem);
   }
 }
