@@ -485,21 +485,6 @@ function handleTabletChange(e) {
 width640.addListener(handleTabletChange);
 // Initial check
 handleTabletChange(width640);
-// Add a class that causes the navbar to slide upwards offscreen or down to its normal position
-window.onscroll = function(e) {
-    let scrollDirection = this.oldScroll > this.scrollY ? "up" : "down";
-    this.oldScroll = this.scrollY;
-    const nav = document.querySelector(".navbar"); // the navbar parent container
-    if (scrollDirection === "up") {
-        // Add a class that triggers a slide animation upwards
-        nav.classList.add("slideDown");
-        nav.classList.remove("slideUp");
-    } else if (scrollDirection === "down") {
-        // Add a class that triggers a slide animation downwards
-        nav.classList.add("slideUp");
-        nav.classList.remove("slideDown");
-    }
-};
 
 },{"medium-zoom":"lu5oF","core-js/stable":"95FYz","regenerator-runtime/runtime":"1EBPE","./clickEvents.js":"TW1yO","./hoverEvents.js":"dbfQE","./animatedZoom.js":"2Mkey","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"lu5oF":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -14181,20 +14166,26 @@ const allClickEvents = function() {
             }
         });
     });
-    const downButton = document.querySelector(".temp1");
-    const upButton = document.querySelector(".temp2");
-    console.log(downButton, upButton);
-    const nav = document.querySelector(".navbar");
-    downButton.addEventListener("click", function(e) {
-        console.log("down");
-        nav.classList.add("slideDown");
-        nav.classList.remove("slideUp");
-    });
-    upButton.addEventListener("click", function(e) {
-        console.log("up");
-        nav.classList.add("slideUp");
-        nav.classList.remove("slideDown");
-    });
+    //@ Program the sliding animation of the navabar
+    // Scrolling down should slide the navbar up offscreen
+    // Scrolling up should reveal it again
+    window.onscroll = function(e) {
+        let scrollDirection = this.oldScroll > this.scrollY ? "up" : "down";
+        this.oldScroll = this.scrollY;
+        const nav = document.querySelector(".navbar"); // the navbar parent container
+        if (scrollDirection === "up") {
+            // Add a class that triggers a slide animation upwards
+            nav.classList.add("slideDown");
+            nav.classList.remove("slideUp");
+        } else if (scrollDirection === "down") {
+            // Add a class that triggers a slide animation downwards
+            nav.classList.add("slideUp");
+            nav.classList.remove("slideDown");
+            // Close the gameNav and hardwareNav as well
+            resetGamesTab();
+            resetHardwareTab();
+        }
+    };
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"dbfQE":[function(require,module,exports) {

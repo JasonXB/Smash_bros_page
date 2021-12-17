@@ -26,20 +26,4 @@ width640.addListener(handleTabletChange);
 // Initial check
 handleTabletChange(width640);
 
-// Add a class that causes the navbar to slide upwards offscreen or down to its normal position
-window.onscroll = function (e) {
-  let scrollDirection = this.oldScroll > this.scrollY ? "up" : "down";
-  this.oldScroll = this.scrollY; 
-  const nav = document.querySelector(".navbar"); // the navbar parent container
-  if (scrollDirection === "up") {
-    // Add a class that triggers a slide animation upwards
-    nav.classList.add("slideDown");
-    nav.classList.remove("slideUp");
-  } else if (scrollDirection === "down") {
-    // Add a class that triggers a slide animation downwards
-    nav.classList.add("slideUp");
-    nav.classList.remove("slideDown");
-  }
-};
-
 

@@ -260,12 +260,6 @@ main {
     height: 5.4rem;
     grid-template-columns: auto 1fr auto auto auto;
   }
-  .navbar.slideUp {
-    transform: translateY(-9.4rem);
-  }
-  .navbar.slideDown {
-    transform: translateY(0);
-  }
   .navbar #burger {
     display: none;
   }
@@ -378,6 +372,12 @@ main {
   }
   .navbar .hardwarenav.open > a span {
     margin-top: 0.7rem;
+  }
+  .navbar.slideUp {
+    transform: translateY(-9.4rem);
+  }
+  .navbar.slideDown {
+    transform: translateY(0);
   }
 }
 

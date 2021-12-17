@@ -27,15 +27,14 @@
   font-size: 1.4rem;
   display: grid;
   grid-template-columns: auto 1fr auto auto;
-  //! Remove the following later
   position: fixed;
   width: 100%;
   z-index: 15;
   // opacity: 0;
-  //$ Animation start: Leave navbar in its default location
+  //~ Animation start: Leave navbar in its default location
   transform: translateY(0);
   transition: transform 0.5s; // makes the slide out animation gradual and not-instant
-  //$ Animation end options for mobile
+  //~ Animation end options for mobile
   &.slideUp {
     transform: translateY(-4.6rem);
   } // slide upwards offscreen
@@ -58,14 +57,6 @@
   }
   //@ DESKTOP STYLING:
   @media (min-width: 770px) {
-    //$ Animation end options for larger viewports
-    &.slideUp {
-      transform: translateY(-9.4rem);
-    } // slide upwards offscreen
-    &.slideDown{
-      transform: translateY(0);
-    } // slide back up to regular position
-
     // Increase the navbar height past 77rem
     $navbar1_height: 5.4rem;
     height: $navbar1_height; // must re-state height for an effect
@@ -191,5 +182,12 @@
         }
       }
     }
+    //~ Animation end options for larger viewports
+    &.slideUp {
+      transform: translateY(-9.4rem);
+    } // slide upwards offscreen
+    &.slideDown {
+      transform: translateY(0);
+    } // slide back up to regular position
   }
 }
