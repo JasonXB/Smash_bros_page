@@ -230,6 +230,19 @@ main {
   font-size: 1.4rem;
   display: grid;
   grid-template-columns: auto 1fr auto auto;
+  position: fixed;
+  width: 100%;
+  z-index: 15;
+  transform: translateY(0);
+  transition: transform 0.3s;
+}
+
+.navbar.slideUp {
+  transform: translateY(-4.6rem);
+}
+
+.navbar.slideDown {
+  transform: translateY(0);
 }
 
 .navbar #burger {
@@ -251,6 +264,12 @@ main {
   .navbar {
     height: 5.4rem;
     grid-template-columns: auto 1fr auto auto auto;
+  }
+  .navbar.slideUp {
+    transform: translateY(-9.4rem);
+  }
+  .navbar.slideDown {
+    transform: translateY(0);
   }
   .navbar #burger {
     display: none;
@@ -1647,7 +1666,7 @@ section.linkMenuList .menu4.clicked .slide {
 }
 
 .mobileSlider {
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 30rem;
   width: 100%;
   position: fixed;
@@ -1660,6 +1679,12 @@ section.linkMenuList .menu4.clicked .slide {
   grid-column: 2/3;
   background: white;
   transform: translateX(30rem);
+}
+
+.temp1, .temp2 {
+  margin: 200px;
+  height: 50px;
+  width: 100px;
 }
 
 /*# sourceMappingURL=global.css.map */

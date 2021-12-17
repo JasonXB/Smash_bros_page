@@ -4,7 +4,7 @@
 
 .mobileSlider {
   // Place the slider menu on the right side of the viewport using grid
-  display: grid;
+  display: none; //! chamge to display grid
   grid-template-columns: 1fr 30rem;
   width: 100%;
   position: fixed;
@@ -18,8 +18,8 @@
     transform: translateX(30rem);
   }
 }
-.temp{
-  margin:200px;
-  height:50px;
-  width:100px;
+.temp1, .temp2 {
+  margin: 200px;
+  height: 50px;
+  width: 100px;
 }

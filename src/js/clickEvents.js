@@ -165,4 +165,19 @@ export const allClickEvents = function () {
       }
     });
   });
+  const downButton = document.querySelector(".temp1");
+  const upButton = document.querySelector(".temp2");
+  console.log(downButton, upButton);
+  const nav = document.querySelector(".navbar");
+
+  downButton.addEventListener("click", function (e) {
+    console.log("down");
+    nav.classList.add("slideDown");
+    nav.classList.remove("slideUp");
+  });
+  upButton.addEventListener("click", function (e) {
+    console.log("up");
+    nav.classList.add("slideUp");
+    nav.classList.remove("slideDown");
+  });
 };
