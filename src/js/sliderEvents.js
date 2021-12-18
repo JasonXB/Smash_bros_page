@@ -120,4 +120,16 @@ export const sliderEvents = function () {
     if (hardwareNav.classList.contains("open")) resetHardwareTab();
     else focusHardwareTab();
   });
+
+  //@ Hovering the nav_links in the gamenav
+  const anchors = Array.from(
+    document.querySelectorAll(".mobileSlider .gamenav .nav__sublink")
+  );
+  const paths = Array.from(
+    document.querySelectorAll(".mobileSlider .gamenav path")
+  );
+  let combined = anchors.map((el, i) => {
+    return [el, paths[i]];
+  });
+  console.log(combined);
 };
