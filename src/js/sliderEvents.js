@@ -1,17 +1,21 @@
-export const clickEvents = function () {
+// Thanks to the class names, the mobile slider nav links glow red when hovered
+// Must code in the behavious where clicking on one adds a long lasting red highlight effect
+export const sliderEvents = function () {
   const burgerIcon = document.querySelector("#burger");
-  const gamesTab = document.querySelector(".navbar2 > .nav__link--games"); // <div> container
-  const gamesNav = document.querySelector(".gamenav"); // <section> container
-  const hardwareNav = document.querySelector(".hardwarenav"); // the navbar extension that pops up after hitting hardwareTab
-  const hardwareTab = document.querySelector(".navbar2 > .nav__link--hardware");
+  const gamesTab = document.querySelector(".mobileSlider .nav__link--games"); // <div> container
+  const gamesNav = document.querySelector(".mobileSlider .gamenav"); // <section> container
+  const hardwareNav = document.querySelector(".mobileSlider .hardwarenav"); // the navbar extension that pops up after hitting hardwareTab
+  const hardwareTab = document.querySelector(
+    ".mobileSlider .nav__link--hardware"
+  );
   const upString = `<svg xmlns="http://www.w3.org/2000/svg" class="up navbar__object" viewBox="0 0 24 24"><path fill="#484848" d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/></svg>`;
   const downString = `<svg xmlns="http://www.w3.org/2000/svg" class="down navbar__object" viewBox="0 0 24 24"><path fill="#484848" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>`;
   const focusableElements = Array.from(
     document.querySelectorAll(
-      ".nav__link:not(.nav__link--games, .nav__link--hardware)"
+      ".mobileSlider .nav__link:not(.nav__link--games, .nav__link--hardware)"
     ) // all elements that highlight red on hover aside from gamesTab and hardwareTab
   );
-
+  //@ ——————————————————————————————————————————————————————
   // Utility functions
   const flipArrowDirection = function (initialSVG) {
     const svgParent = initialSVG.closest(".nav__link");
@@ -27,15 +31,13 @@ export const clickEvents = function () {
     }
     return;
   };
-
   // Click event action helper functions
   const resetGamesTab = function () {
     gamesTab.classList.remove("redFocusFilter");
-    gamesTab.style.borderBottom = "0px";
     gamesNav.classList.remove("open"); // closes the gamenav extension
     // Set hardware arrow down
     const arrowSVG = document.querySelector(
-      ".nav__link--games > svg:last-of-type"
+      ".mobileSlider .nav__link--games > svg:last-of-type"
     );
     const svgParent = arrowSVG.closest(".nav__link");
     arrowSVG.remove();
@@ -43,11 +45,10 @@ export const clickEvents = function () {
   };
   const resetHardwareTab = function () {
     hardwareTab.classList.remove("redFocusFilter");
-    hardwareTab.style.borderBottom = "0px";
     hardwareNav.classList.remove("open"); // closes the hardwarenav extension
     // Set hardware arrow down
     const arrowSVG = document.querySelector(
-      ".nav__link--hardware > svg:last-of-type"
+      ".mobileSlider .nav__link--hardware > svg:last-of-type"
     );
     const svgParent = arrowSVG.closest(".nav__link");
     arrowSVG.remove();
@@ -55,14 +56,13 @@ export const clickEvents = function () {
   };
   const focusGamesTab = function () {
     const gamesArrow = document.querySelector(
-      ".nav__link--games > svg:last-of-type"
+      ".mobileSlider .nav__link--games > svg:last-of-type"
     );
     // Open the nav extension and flip the arrow SVG
-    gamesNav.classList.toggle("open"); // open nav extension
+    gamesNav.classList.remove("hide"); // open nav extension
     flipArrowDirection(gamesArrow);
     // Apply filter class to gamesTab, and apply a border on the bottom
     gamesTab.classList.add("redFocusFilter");
-    gamesTab.style.borderBottom = "3px solid #f70018";
     // Remove the class from all other nav__links
     resetHardwareTab();
     focusableElements.forEach((el) => {
@@ -71,14 +71,13 @@ export const clickEvents = function () {
   };
   const focusHardwareTab = function () {
     const hardwareArrow = document.querySelector(
-      ".nav__link--hardware > svg:last-of-type"
+      ".mobileSlider .nav__link--hardware > svg:last-of-type"
     );
     // Open the nav extension and flip the arrow SVG
-    hardwareNav.classList.toggle("open"); // open nav extension
+    hardwareNav.classList.remove("hide"); // open nav extension
     flipArrowDirection(hardwareArrow);
     // Apply filter class to hardwareTab, and apply a border on the bottom
     hardwareTab.classList.add("redFocusFilter");
-    hardwareTab.style.borderBottom = "3px solid #f70018";
     // Remove the class from all other nav__links
     resetGamesTab();
     focusableElements.forEach((el) => {
@@ -90,12 +89,6 @@ export const clickEvents = function () {
     if (hardwareNav.classList.contains("open")) resetHardwareTab();
     focusableElements.forEach((k) => k.classList.remove("redFocusFilter"));
   }; // removes redFilterFocus tab from all elements it could be on
-
-  //% Burger Icon
-  burgerIcon.addEventListener("click", () => {
-    burgerIcon.classList.toggle("open"); // toggle "open" class
-    removeFocusFromAll(); // should remove focus from all nav__links
-  });
 
   //% All nav__links should divert redFocusFilter to the one clicked
   focusableElements.forEach((element) => {
@@ -127,62 +120,4 @@ export const clickEvents = function () {
     if (hardwareNav.classList.contains("open")) resetHardwareTab();
     else focusHardwareTab();
   });
-
-  //% Clicking outside the navbar should remove the redFocusFilter class from all nav__links
-  document.addEventListener("click", function (e) {
-    const isClickInside = document.querySelector(".navbar").contains(e.target);
-    if (!isClickInside) removeFocusFromAll();
-  });
-
-  //% Clicking on the Slide Down Menu elements
-  // prettier-ignore
-  const labels = Array.from(document.querySelectorAll(".menu1, .menu2 , .menu3 , .menu4"));
-  labels.forEach((el) => {
-    el.addEventListener("click", function () {
-      // Define template literal strings for up and down arrows
-      const upString = `<svg xmlns="http://www.w3.org/2000/svg" class="up"  width="20px" viewBox="0 0 24 24"><path fill="rgb(22, 96, 160)" d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/></svg>`;
-      const downString = `<svg xmlns="http://www.w3.org/2000/svg" class="down" width="20px" viewBox="0 0 24 24"><path fill="rgb(22, 96, 160)" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>`;
-      // Locate the arrow SVG currently displayed
-      const arrowSVG = document.querySelector(
-        `.${el.classList[0]} label > svg`
-      );
-      // Locate the label element that houses that SVG
-      const parentLabel = document.querySelector(`.${el.classList[0]} label`);
-      // Determine whether the SVG displayed now points up or down
-      const direction = arrowSVG.classList[0]; // equals "up" or "down"
-
-      // If you click on this element, add a class to the div
-      el.classList.toggle("clicked");
-      // If the arrow points down, switch SVG's so it points up
-      if (direction === "down") {
-        arrowSVG.remove();
-        parentLabel.insertAdjacentHTML("beforeend", upString);
-      }
-      // If the arrow points down, change the SVG so it points up
-      else {
-        arrowSVG.remove();
-        parentLabel.insertAdjacentHTML("beforeend", downString);
-      }
-    });
-  });
-  //@ Program the sliding animation of the navabar
-  // Scrolling down should slide the navbar up offscreen
-  // Scrolling up should reveal it again
-  window.onscroll = function (e) {
-    let scrollDirection = this.oldScroll > this.scrollY ? "up" : "down";
-    this.oldScroll = this.scrollY;
-    const nav = document.querySelector(".navbar"); // the navbar parent container
-    if (scrollDirection === "up") {
-      // Add a class that triggers a slide animation upwards
-      nav.classList.add("slideDown");
-      nav.classList.remove("slideUp");
-    } else if (scrollDirection === "down") {
-      // Add a class that triggers a slide animation downwards
-      nav.classList.add("slideUp");
-      nav.classList.remove("slideDown");
-      // Close the gameNav and hardwareNav as well
-      resetGamesTab();
-      resetHardwareTab();
-    }
-  };
 };

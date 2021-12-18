@@ -1668,18 +1668,27 @@ section.linkMenuList .menu4.clicked .slide {
   transform: rotate(-45deg);
 }
 
+.mobileSlider p, .mobileSlider span {
+  user-select: none;
+}
+
 .mobileSlider {
   display: grid;
   margin-top: 4.6rem;
   grid-template-columns: 1fr 30rem;
   width: 100%;
   position: fixed;
-  z-index: 10;
+  z-index: 11;
   height: 100vh;
 }
 
 .mobileSlider .overlay {
+  grid-column: 1/2;
   background: rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
 }
 
 .mobileSlider .navbar2 {

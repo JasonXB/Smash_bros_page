@@ -81,7 +81,7 @@
 // give an element the hvr-icon-grow class
 // When that class is hovered, focused, or active, apply the above behaviour
 
-.clickEnlarge:hover{
+.clickEnlarge:hover {
   position: absolute; // makes the image jump locations
   z-index: 15;
   top: 0;
@@ -89,5 +89,5 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  transform: scale(2);	
+  transform: scale(2);
 }
