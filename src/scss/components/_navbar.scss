@@ -145,8 +145,7 @@
         margin-inline: $gamenav_small_margin;
         svg {
           padding: 1.5rem 3.5rem 1.5rem 3.5rem;
-          border: 1px solid #dadada;
-          border-radius: $border-radius;
+          @include svgBorder;
           width: 11rem;
         } // resize the SVG's
         span {

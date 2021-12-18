@@ -84,3 +84,8 @@ $text-gray: #484848;
 @mixin darkfilter {
   filter: brightness(70%);
 }
+
+@mixin svgBorder {
+  border: 1px solid #dadada;
+  border-radius: 5px;
+}
