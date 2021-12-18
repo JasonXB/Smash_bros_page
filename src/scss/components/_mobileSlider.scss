@@ -47,21 +47,28 @@
   }
   //^ Style gamenav
   .gamenav {
-    @include flex-row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    padding: 1.6rem;
+    // @include flex-row;
+    // flex-wrap: wrap;
     a {
       @include flex-column;
-      width: 50%;
-      margin-bottom: 1.2rem;
+    }
+    .svgContainer {
+      width: 100%;
+      height: 6.5rem;
+      @include svgBorder;
+      // Center the SVG's in their containers
+      @include flex-row;
+      justify-content: center;
+      margin-bottom: 0.6rem;
     }
     svg {
       box-sizing: border-box;
-      width: 10rem;
-      // Size the SVG and border
-      padding-inline: 0rem;
-      padding-block: 2rem;
-      @include svgBorder;
-      margin-bottom: 0.6rem;
+      height: 100%;
+      padding-block: 1rem;
     }
   }
   .hardwarenav {
