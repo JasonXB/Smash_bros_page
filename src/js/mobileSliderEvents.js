@@ -1,6 +1,6 @@
 // Thanks to the class names, the mobile slider nav links glow red when hovered
 // Must code in the behavious where clicking on one adds a long lasting red highlight effect
-export const sliderEvents = function () {
+export const mobileSliderEvents = function () {
   const burgerIcon = document.querySelector("#burger");
   const gamesTab = document.querySelector(".mobileSlider .nav__link--games"); // <div> container
   const gamesNav = document.querySelector(".mobileSlider .gamenav"); // <section> container

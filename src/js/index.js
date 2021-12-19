@@ -6,11 +6,11 @@ import "regenerator-runtime/runtime"; //"enables polyfills for async JS"
 import { clickEvents } from "./clickEvents.js"; // must use .js extension or HTML thinks these are HTML files
 import { allHoverEvents } from "./hoverEvents.js";
 import { animatedZoom } from "./animatedZoom.js"; //@ must apply after click events (we change img brightness on click)
-import { sliderEvents } from "./sliderEvents";
+import { mobileSliderEvents } from "./mobileSliderEvents";
 // Immediately execute the imported code
 clickEvents();
 allHoverEvents();
-sliderEvents();
+mobileSliderEvents();
 animatedZoom(); //@ must apply after click events (we change img brightness on click)
 
 //% Past 640px, change the text for the login anchor on the navbar

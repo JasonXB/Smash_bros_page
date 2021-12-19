@@ -11,12 +11,6 @@
   }
 }
 
-// Prevent highlighting on the mobile slider
-.mobileSlider p,
-.mobileSlider span {
-  user-select: none;
-}
-
 .mobileSlider {
   // Place the slider menu on the right side of the viewport using grid
   display: grid;
@@ -26,21 +20,25 @@
   position: fixed;
   z-index: 11;
   height: 100vh;
-  
+
   .overlay {
-    grid-column: 1/2;
+    grid-column: 1/-1;
+    grid-row: 1/2;
     background: rgba(0, 0, 0, 0.5);
     position: relative;
-    z-index: 11;
+    z-index: 1;
     width: 100%;
     height: 100%;
   }
   .navbar2 {
-    width: 30rem;
     grid-column: 2/3;
+    grid-row: 1/2;
     background: rgba(255, 255, 255, 1);
     // transform: translateX(30rem); // place slider menu offscreen by default
     font-size: 1.6rem;
+    width: 30rem;
+    position: relative;
+    z-index: 2;
   }
   .nav__link {
     padding: 1.2rem; //$ affects spacing between each nav link
@@ -80,7 +78,7 @@
       padding-block: 1rem;
     }
   }
-
+  //^ Style hardwarenav
   .hardwarenav {
     @include needOpenClassToReveal;
     grid-template-columns: 1fr 1fr;
@@ -122,6 +120,21 @@
       margin-bottom: 0.6rem;
     }
   }
+  //~ Animation start (start this menu offscreen to the right, with overlay off)
+  transform: translateX(30rem);
+  transition: transform 0.5s; // makes the slide out animation gradual and not-instant
+  .overlay {
+    display: none;
+  }
+  //~ Animation end (when a class is added, slide out the menu)
+  &.slideOnscreen {
+    // Bring slider into view
+    transform: translateX(0);
+    // Make overlay visible
+    .overlay {
+      display: block;
+    }
+  }
   @media (min-width: 770px) {
     .overlay {
       display: none;
@@ -131,3 +144,18 @@
     }
   }
 }
+
+// Prevent highlighting on the mobile slider
+.mobileSlider p,
+.mobileSlider span {
+  user-select: none;
+}
+
+// If the mobileSlider has the slideout class, trigger a reveal animation
+// nav.mobileSlider.slideOnscreen {
+//   display: grid;
+// }
+
+// nav.mobileSlider.slideOffscreen {
+//   display: grid;
+// }

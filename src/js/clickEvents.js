@@ -165,7 +165,7 @@ export const clickEvents = function () {
       }
     });
   });
-  //@ Program the sliding animation of the navabar
+  //@ Program the sliding up/down animation of the desktop navabar
   // Scrolling down should slide the navbar up offscreen
   // Scrolling up should reveal it again
   window.onscroll = function (e) {
@@ -185,4 +185,14 @@ export const clickEvents = function () {
       resetHardwareTab();
     }
   };
+  //@ Clicking on the burger icon
+  burgerIcon.addEventListener("click", function (e) {
+    // Add the "slideOut" class to the <nav class="mobileSlider">
+    const mobileSlider = document.querySelector("nav.mobileSlider");
+    if (mobileSlider.classList.contains("slideOnscreen")) {
+      mobileSlider.classList.remove("slideOnscreen");
+    } else {
+      mobileSlider.classList.add("slideOnscreen");
+    }
+  });
 };

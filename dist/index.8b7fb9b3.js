@@ -467,13 +467,13 @@ var _runtime = require("regenerator-runtime/runtime"); //"enables polyfills for 
 var _clickEventsJs = require("./clickEvents.js"); // must use .js extension or HTML thinks these are HTML files
 var _hoverEventsJs = require("./hoverEvents.js");
 var _animatedZoomJs = require("./animatedZoom.js"); //@ must apply after click events (we change img brightness on click)
-var _sliderEvents = require("./sliderEvents");
+var _mobileSliderEvents = require("./mobileSliderEvents");
 //^ The following code is messing up for some reason, halting the remaining JS code
 if (module.hot) module.hot.accept(); // "enables hot module replacement"
 // Immediately execute the imported code
 _clickEventsJs.clickEvents();
 _hoverEventsJs.allHoverEvents();
-_sliderEvents.sliderEvents();
+_mobileSliderEvents.mobileSliderEvents();
 _animatedZoomJs.animatedZoom(); //@ must apply after click events (we change img brightness on click)
 //% Past 640px, change the text for the login anchor on the navbar
 const loginTextElement = document.querySelector(".nav__link--login span");
@@ -488,7 +488,7 @@ width640.addListener(handleTabletChange);
 // Initial check
 handleTabletChange(width640);
 
-},{"medium-zoom":"lu5oF","core-js/stable":"95FYz","regenerator-runtime/runtime":"1EBPE","./clickEvents.js":"TW1yO","./hoverEvents.js":"dbfQE","./animatedZoom.js":"2Mkey","./sliderEvents":"9tMwr","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"lu5oF":[function(require,module,exports) {
+},{"medium-zoom":"lu5oF","core-js/stable":"95FYz","regenerator-runtime/runtime":"1EBPE","./clickEvents.js":"TW1yO","./hoverEvents.js":"dbfQE","./animatedZoom.js":"2Mkey","./mobileSliderEvents":"7amdc","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"lu5oF":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 /*! medium-zoom 1.0.6 | MIT License | https://github.com/francoischalifour/medium-zoom */ var _extends = Object.assign || function(target) {
@@ -14168,7 +14168,7 @@ const clickEvents = function() {
             }
         });
     });
-    //@ Program the sliding animation of the navabar
+    //@ Program the sliding up/down animation of the desktop navabar
     // Scrolling down should slide the navbar up offscreen
     // Scrolling up should reveal it again
     window.onscroll = function(e) {
@@ -14188,6 +14188,13 @@ const clickEvents = function() {
             resetHardwareTab();
         }
     };
+    //@ Clicking on the burger icon
+    burgerIcon.addEventListener("click", function(e) {
+        // Add the "slideOut" class to the <nav class="mobileSlider">
+        const mobileSlider = document.querySelector("nav.mobileSlider");
+        if (mobileSlider.classList.contains("slideOnscreen")) mobileSlider.classList.remove("slideOnscreen");
+        else mobileSlider.classList.add("slideOnscreen");
+    });
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"dbfQE":[function(require,module,exports) {
@@ -14334,12 +14341,12 @@ const animatedZoom = function() {
    
 */ 
 
-},{"medium-zoom":"lu5oF","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"9tMwr":[function(require,module,exports) {
+},{"medium-zoom":"lu5oF","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"7amdc":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "sliderEvents", ()=>sliderEvents
+parcelHelpers.export(exports, "mobileSliderEvents", ()=>mobileSliderEvents
 );
-const sliderEvents = function() {
+const mobileSliderEvents = function() {
     const burgerIcon = document.querySelector("#burger");
     const gamesTab = document.querySelector(".mobileSlider .nav__link--games"); // <div> container
     const gamesNav = document.querySelector(".mobileSlider .gamenav"); // <section> container
