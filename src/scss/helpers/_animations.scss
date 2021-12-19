@@ -81,13 +81,25 @@
 // give an element the hvr-icon-grow class
 // When that class is hovered, focused, or active, apply the above behaviour
 
-.clickEnlarge:hover {
-  position: absolute; // makes the image jump locations
-  z-index: 15;
+
+#overlay {
+  // Hide overlay by default
+  display: none;
+  background: rgba(0, 0, 0, 0.4);
+  // Make it expand across the entire screen aside from navbar
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  transform: scale(2);
+  width: 100vw;
+  height: 100vh;
+  z-index: 2; // below the mobileSlider
+  margin-top: 4.6rem; // avoid covering the nav
+  // Once the reveal class is applied by hidding the burgeer, show the overlay
+  &.reveal {
+    display: block;
+  }
+  // We only need overlays on mobile screens
+  @media (min-width: 770px) {
+    display: none;
+  }
 }

@@ -52,27 +52,6 @@ object {
   pointer-events: none;
 }
 
-#overlay {
-  // Hide overlay by default
-  display: none;
-  background: rgba(0, 0, 0, 0.4);
-  // Make it expand across the entire screen aside from navbar
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 2; // below the mobileSlider
-  margin-top: 4.6rem; // avoid covering the nav
-  // Once the reveal class is applied by hidding the burgeer, show the overlay
-  &.reveal {
-    display: block;
-  }
-  // We only need overlays on mobile screens
-  @media (min-width: 770px) {
-    display: none;
-  }
-}
 
 // Set the main layout/grid for the entire webpage
 main {
