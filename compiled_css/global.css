@@ -336,11 +336,14 @@ main {
     align-items: center;
     margin-inline: 0.7rem;
   }
-  .navbar .gamenav.open > a svg {
-    padding: 1.5rem 3.5rem 1.5rem 3.5rem;
+  .navbar .gamenav.open > a div {
     border: 1px solid #dadada;
     border-radius: 5px;
     width: 11rem;
+  }
+  .navbar .gamenav.open > a svg {
+    padding: 1.5rem 3.5rem 1.5rem 3.5rem;
+    width: 100%;
   }
   .navbar .gamenav.open > a span {
     margin: 0.7rem 0 0 0;

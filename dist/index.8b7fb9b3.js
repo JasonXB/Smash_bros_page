@@ -14220,7 +14220,7 @@ const allHoverEvents = function() {
         });
     });
     //% nav__link in the gamenav
-    const gamenav_anchors = Array.from(document.querySelectorAll(".navbar .nav__sublink--shop, .navbar .nav__sublink--sales, .navbar .nav__sublink--soon, .navbar .nav__sublink--online, .navbar .nav__sublink--mobile"));
+    const gamenav_anchors = Array.from(document.querySelectorAll(".nav__sublink--shop, .nav__sublink--sales, .nav__sublink--soon, .nav__sublink--online, .nav__sublink--mobile"));
     gamenav_anchors.forEach((el)=>{
         // On hover, change the look of the individual gamenav SVG's
         el.addEventListener("mouseenter", (e)=>{
@@ -14229,10 +14229,12 @@ const allHoverEvents = function() {
             // Color text red on hover
             parentContainer.lastElementChild.style.color = nintendoRed; // style anchors red
             parentContainer.style.color = nintendoRed; // style p tags red
-            // Recolor SVG white while turning its background red
-            const svgElement = parentContainer.firstElementChild;
-            svgElement.style.backgroundColor = nintendoRed; // change SVG background color to red
-            svgElement.firstChild.style.fill = "white"; // make our SVG white
+            // Color the background behind the SVG red
+            const svgContainer = Array.from(parentContainer.children)[0];
+            svgContainer.style.backgroundColor = nintendoRed;
+            // Color the SVG itself white
+            const svgIcon = svgContainer.children[0];
+            svgIcon.children[0].style.fill = "white";
         });
         // Return SVG's back to normal when you exit the parent container
         el.addEventListener("mouseleave", (e)=>{
@@ -14240,10 +14242,12 @@ const allHoverEvents = function() {
             // Undo the text recoloring
             parentContainer.lastElementChild.style.color = textGray; // targets <a> tags
             parentContainer.style.color = textGray; // targets <p> tags
-            // Undo the SVG recoloring
-            const svgElement = parentContainer.firstElementChild;
-            svgElement.style.backgroundColor = "white"; // change our SVG background back to white
-            svgElement.firstChild.style.fill = textGray; // change SVG color back to the original gray
+            // Revert background color to white 
+            const svgContainer = Array.from(parentContainer.children)[0];
+            svgContainer.style.backgroundColor = "white";
+            // Revert SVG color to a dark gray
+            const svgIcon = svgContainer.children[0];
+            svgIcon.children[0].style.fill = textGray;
         });
     });
     //% nav__link in the hardwarenav
