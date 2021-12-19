@@ -14220,7 +14220,7 @@ const allHoverEvents = function() {
         });
     });
     //% nav__link in the gamenav
-    const gamenav_anchors = Array.from(document.querySelectorAll(".nav__sublink--shop, .nav__sublink--sales, .nav__sublink--soon, .nav__sublink--online, .nav__sublink--mobile"));
+    const gamenav_anchors = Array.from(document.querySelectorAll(".navbar .nav__sublink--shop, .navbar .nav__sublink--sales, .navbar .nav__sublink--soon, .navbar .nav__sublink--online, .navbar .nav__sublink--mobile"));
     gamenav_anchors.forEach((el)=>{
         // On hover, change the look of the individual gamenav SVG's
         el.addEventListener("mouseenter", (e)=>{
