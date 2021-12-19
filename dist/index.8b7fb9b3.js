@@ -14033,7 +14033,7 @@ const clickEvents = function() {
     const hardwareTab = document.querySelector(".navbar2 > .nav__link--hardware");
     const upString1 = `<svg xmlns="http://www.w3.org/2000/svg" class="up navbar__object" viewBox="0 0 24 24"><path fill="#484848" d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/></svg>`;
     const downString1 = `<svg xmlns="http://www.w3.org/2000/svg" class="down navbar__object" viewBox="0 0 24 24"><path fill="#484848" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>`;
-    const focusableElements = Array.from(document.querySelectorAll(".nav__link:not(.nav__link--games, .nav__link--hardware)") // all elements that highlight red on hover aside from gamesTab and hardwareTab
+    const focusableElements = Array.from(document.querySelectorAll(".navbar .nav__link:not(.nav__link--games, .nav__link--hardware)") // all elements that highlight red on hover aside from gamesTab and hardwareTab
     );
     // Utility functions
     const flipArrowDirection = function(initialSVG) {
@@ -14410,15 +14410,17 @@ const sliderEvents = function() {
             el.classList.remove("redFocusFilter"); // now remove it
         });
     };
+    // Removes redFilterFocus tab from all elements it could be on
     const removeFocusFromAll = function() {
         if (gamesNav.classList.contains("open")) resetGamesTab();
         if (hardwareNav.classList.contains("open")) resetHardwareTab();
         focusableElements.forEach((k)=>k.classList.remove("redFocusFilter")
         );
-    }; // removes redFilterFocus tab from all elements it could be on
+    };
     //% All nav__links should divert redFocusFilter to the one clicked
     focusableElements.forEach((element)=>{
         element.addEventListener("click", function(clickedEl) {
+            console.log(element);
             // Apply the redFocusFilter class to the element
             element.classList.toggle("redFocusFilter");
             // Remove class from every other nav__link
@@ -14454,7 +14456,6 @@ const sliderEvents = function() {
             paths[i]
         ];
     });
-    console.log(combined);
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["cSv3F","3auaO"], "3auaO", "parcelRequireab64")

@@ -8,7 +8,7 @@ export const clickEvents = function () {
   const downString = `<svg xmlns="http://www.w3.org/2000/svg" class="down navbar__object" viewBox="0 0 24 24"><path fill="#484848" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>`;
   const focusableElements = Array.from(
     document.querySelectorAll(
-      ".nav__link:not(.nav__link--games, .nav__link--hardware)"
+      ".navbar .nav__link:not(.nav__link--games, .nav__link--hardware)"
     ) // all elements that highlight red on hover aside from gamesTab and hardwareTab
   );
 

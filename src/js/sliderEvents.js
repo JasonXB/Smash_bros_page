@@ -86,15 +86,17 @@ export const sliderEvents = function () {
       el.classList.remove("redFocusFilter"); // now remove it
     });
   };
+  // Removes redFilterFocus tab from all elements it could be on
   const removeFocusFromAll = function () {
     if (gamesNav.classList.contains("open")) resetGamesTab();
     if (hardwareNav.classList.contains("open")) resetHardwareTab();
     focusableElements.forEach((k) => k.classList.remove("redFocusFilter"));
-  }; // removes redFilterFocus tab from all elements it could be on
+  }; 
 
   //% All nav__links should divert redFocusFilter to the one clicked
   focusableElements.forEach((element) => {
     element.addEventListener("click", function (clickedEl) {
+      console.log(element)
       // Apply the redFocusFilter class to the element
       element.classList.toggle("redFocusFilter");
       // Remove class from every other nav__link
@@ -135,5 +137,4 @@ export const sliderEvents = function () {
   let combined = anchors.map((el, i) => {
     return [el, paths[i]];
   });
-  console.log(combined);
 };

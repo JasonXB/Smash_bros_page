@@ -2,13 +2,12 @@
 @import "../helpers/burger"; // contains styling for burger icon
 @import "../helpers/navbar"; //  contains scss variables
 
-@mixin needOpenClassToReveal{
-  // Hide a submenu by default
-  display: none;
-  // Reveal it if gamesnav gets the "open" class
-  // Clicking "Games ▼" and "Hardware ▼" tabs will give gamenav and hardwarenav the open class
-  &.open{
-    display:grid;
+// Reveal the gamenav or hardwarenav if it gets assigned the "open" class
+// Clicking "Games ▼" and "Hardware ▼" tabs will give gamenav and hardwarenav this class
+@mixin needOpenClassToReveal {
+  display: none; // Hide submenu by default
+  &.open {
+    display: grid;
   }
 }
 
@@ -20,7 +19,7 @@
 
 .mobileSlider {
   // Place the slider menu on the right side of the viewport using grid
-  display: grid; 
+  display: grid;
   margin-top: 4.6rem;
   grid-template-columns: 1fr 30rem;
   width: 100%;
@@ -61,7 +60,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 1.2rem;
     padding: 1.6rem;
-    
+
     a {
       @include flex-column;
     }
