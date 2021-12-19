@@ -92,7 +92,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2; // below the mobileSlider
+  z-index: 1; // below the mobileSlider
   margin-top: 4.6rem; // avoid covering the nav
   // Once the reveal class is applied by hidding the burgeer, show the overlay
   &.reveal {
