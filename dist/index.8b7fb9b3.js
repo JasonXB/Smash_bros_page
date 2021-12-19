@@ -14386,6 +14386,7 @@ const sliderEvents = function() {
         const gamesArrow = document.querySelector(".mobileSlider .nav__link--games > svg:last-of-type");
         // Open the nav extension and flip the arrow SVG
         gamesNav.classList.remove("hide"); // open nav extension
+        gamesNav.classList.add("open"); // open nav extension
         flipArrowDirection(gamesArrow);
         // Apply filter class to gamesTab, and apply a border on the bottom
         gamesTab.classList.add("redFocusFilter");
@@ -14399,6 +14400,7 @@ const sliderEvents = function() {
         const hardwareArrow = document.querySelector(".mobileSlider .nav__link--hardware > svg:last-of-type");
         // Open the nav extension and flip the arrow SVG
         hardwareNav.classList.remove("hide"); // open nav extension
+        hardwareNav.classList.add("open"); // open nav extension
         flipArrowDirection(hardwareArrow);
         // Apply filter class to hardwareTab, and apply a border on the bottom
         hardwareTab.classList.add("redFocusFilter");

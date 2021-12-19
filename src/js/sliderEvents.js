@@ -60,6 +60,7 @@ export const sliderEvents = function () {
     );
     // Open the nav extension and flip the arrow SVG
     gamesNav.classList.remove("hide"); // open nav extension
+    gamesNav.classList.add("open"); // open nav extension
     flipArrowDirection(gamesArrow);
     // Apply filter class to gamesTab, and apply a border on the bottom
     gamesTab.classList.add("redFocusFilter");
@@ -75,6 +76,7 @@ export const sliderEvents = function () {
     );
     // Open the nav extension and flip the arrow SVG
     hardwareNav.classList.remove("hide"); // open nav extension
+    hardwareNav.classList.add("open"); // open nav extension
     flipArrowDirection(hardwareArrow);
     // Apply filter class to hardwareTab, and apply a border on the bottom
     hardwareTab.classList.add("redFocusFilter");
@@ -110,7 +112,9 @@ export const sliderEvents = function () {
     // If the gamenav extension to the navbar is active, revert the gamesTab to its orig look
     // If it's not open, highlight the gamesTab, and open up the navbar extension
     if (gamesNav.classList.contains("open")) resetGamesTab();
-    else focusGamesTab();
+    else {
+      focusGamesTab();
+    }
   });
 
   //% Hardware ▼ tab

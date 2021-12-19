@@ -1727,10 +1727,14 @@ section.linkMenuList .menu4.clicked .slide {
 }
 
 .mobileSlider .gamenav {
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
   padding: 1.6rem;
+}
+
+.mobileSlider .gamenav.open {
+  display: grid;
 }
 
 .mobileSlider .gamenav a {
@@ -1758,10 +1762,14 @@ section.linkMenuList .menu4.clicked .slide {
 }
 
 .mobileSlider .hardwarenav {
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
   padding: 1.6rem;
+}
+
+.mobileSlider .hardwarenav.open {
+  display: grid;
 }
 
 .mobileSlider .hardwarenav img {
