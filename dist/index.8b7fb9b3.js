@@ -14175,11 +14175,11 @@ const clickEvents = function() {
         let scrollDirection = this.oldScroll > this.scrollY ? "up" : "down";
         this.oldScroll = this.scrollY;
         const nav = document.querySelector(".navbar"); // the navbar parent container
-        if (scrollDirection === "up") {
+        if (scrollDirection === "up" && !burgerIcon.classList.contains("open")) {
             // Add a class that triggers a slide animation upwards
             nav.classList.add("slideDown");
             nav.classList.remove("slideUp");
-        } else if (scrollDirection === "down") {
+        } else if (scrollDirection === "down" && !burgerIcon.classList.contains("open")) {
             // Add a class that triggers a slide animation downwards
             nav.classList.add("slideUp");
             nav.classList.remove("slideDown");
