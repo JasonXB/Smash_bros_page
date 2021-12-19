@@ -230,6 +230,7 @@ main {
   z-index: 15;
   transform: translateY(0);
   transition: transform 0.5s;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .navbar.slideUp {
@@ -286,7 +287,6 @@ main {
     background-color: white;
     grid-column: 1/-1;
     grid-row: 2/3;
-    border-top: 1px solid #e0e0e0;
   }
   .navbar .navbar2 > a {
     display: block;

@@ -55,6 +55,8 @@
   .nav__link--login {
     grid-column: 3/4; // position login anchor as 2nd last item on navbar pt 1 grid
   }
+  border-bottom: 1px solid #e0e0e0;
+
   //@ DESKTOP STYLING:
   @media (min-width: 770px) {
     // Increase the navbar height past 77rem
@@ -93,7 +95,6 @@
       background-color: white;
       grid-column: 1/-1;
       grid-row: 2/3;
-      border-top: 1px solid rgb(224, 224, 224);
       & > a {
         display: block;
         @include flex-row;
