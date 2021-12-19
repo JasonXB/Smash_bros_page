@@ -191,8 +191,10 @@ export const clickEvents = function () {
     const mobileSlider = document.querySelector("nav.mobileSlider");
     if (mobileSlider.classList.contains("slideOnscreen")) {
       mobileSlider.classList.remove("slideOnscreen");
+      document.querySelector("#overlay").classList.remove("reveal");
     } else {
       mobileSlider.classList.add("slideOnscreen");
+      document.querySelector("#overlay").classList.add("reveal");
     }
   });
 };

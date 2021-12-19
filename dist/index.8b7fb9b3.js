@@ -14192,8 +14192,13 @@ const clickEvents = function() {
     burgerIcon.addEventListener("click", function(e) {
         // Add the "slideOut" class to the <nav class="mobileSlider">
         const mobileSlider = document.querySelector("nav.mobileSlider");
-        if (mobileSlider.classList.contains("slideOnscreen")) mobileSlider.classList.remove("slideOnscreen");
-        else mobileSlider.classList.add("slideOnscreen");
+        if (mobileSlider.classList.contains("slideOnscreen")) {
+            mobileSlider.classList.remove("slideOnscreen");
+            document.querySelector("#overlay").classList.remove("reveal");
+        } else {
+            mobileSlider.classList.add("slideOnscreen");
+            document.querySelector("#overlay").classList.add("reveal");
+        }
     });
 };
 

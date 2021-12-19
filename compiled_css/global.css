@@ -127,6 +127,28 @@ object {
   pointer-events: none;
 }
 
+#overlay {
+  display: none;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  margin-top: 4.6rem;
+}
+
+#overlay.reveal {
+  display: block;
+}
+
+@media (min-width: 770px) {
+  #overlay {
+    display: none;
+  }
+}
+
 main {
   display: grid;
   grid-template-columns: 4% 1fr 4%;
@@ -1684,6 +1706,7 @@ section.linkMenuList .menu4.clicked .slide {
 }
 
 .mobileSlider .overlay {
+  display: none;
   grid-column: 1/-1;
   grid-row: 1/2;
   background: rgba(0, 0, 0, 0.5);
@@ -1806,16 +1829,12 @@ section.linkMenuList .menu4.clicked .slide {
   margin-bottom: 0.6rem;
 }
 
-.mobileSlider .overlay {
-  display: none;
-}
-
 .mobileSlider.slideOnscreen {
   transform: translateX(0);
 }
 
 .mobileSlider.slideOnscreen .overlay {
-  display: block;
+  display: none;
 }
 
 @media (min-width: 770px) {
