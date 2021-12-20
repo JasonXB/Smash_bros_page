@@ -1,0 +1,77 @@
+@import "../helpers/partials"; // contains scss variables and mixins
+$standardMargin: 1.6rem;
+.finalFooter {
+  grid-row: 11/12;
+  grid-column: 2/3;
+  background-color: #3e3d3d;
+  @include flex-column;
+  padding: 3.2rem;
+  // "Contact us" and "website feedback"
+  & > p:first-of-type {
+    font-size: 1.6rem;
+    color: white;
+    margin-bottom: $standardMargin;
+    font-weight: 400;
+    span {
+      margin-inline: 1rem;
+    }
+  }
+  // "@ Nintendo of America"
+  & > p:last-of-type {
+    text-align: center;
+    @include flex-column;
+    font-size: 1.2rem;
+    color: white;
+    span:first-of-type {
+      margin-bottom: 0.8rem;
+    }
+  }
+  // Style the social media SVG's
+  .socialMedia {
+    @include flex-row;
+  }
+  .svgContainer {
+    @include flex-row;
+    width: 5.5rem;
+    height: 4.5rem;
+    background-color: black;
+    margin-bottom: $standardMargin;
+    border-radius: 8px;
+    svg {
+      height: 3.5rem;
+      margin: auto;
+    }
+  }
+  .svgContainer:not(.svgContainer--youtube) {
+    margin-right: $standardMargin;
+  }
+  .svgContainer--facebook {
+    background-color: #1878f2;
+  }
+  .svgContainer--insta {
+    background-color: #d32c69;
+  }
+  .svgContainer--twitter {
+    background-color: #1da1f2;
+  }
+  .svgContainer--youtube {
+    background-color: #ff0200;
+  }
+  @media (min-width: 450px) {
+    // Change dimensions of the social media logo containers
+    .svgContainer {
+      width: 6.92rem;
+      height: 6.3rem;
+      svg {
+        height: 4.5rem;
+      }
+    }
+    // Make it so text doesn't align to center
+    & > p:last-of-type {
+      text-align: start;
+    }
+    & > p:first-of-type span {
+      margin-inline: 3rem;
+    }
+  }
+}
