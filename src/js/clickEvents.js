@@ -176,7 +176,10 @@ export const clickEvents = function () {
       // Add a class that triggers a slide animation upwards
       nav.classList.add("slideDown");
       nav.classList.remove("slideUp");
-    } else if (scrollDirection === "down" && !burgerIcon.classList.contains("open")) {
+    } else if (
+      scrollDirection === "down" &&
+      !burgerIcon.classList.contains("open")
+    ) {
       // Add a class that triggers a slide animation downwards
       nav.classList.add("slideUp");
       nav.classList.remove("slideDown");
@@ -185,16 +188,8 @@ export const clickEvents = function () {
       resetHardwareTab();
     }
   };
-  //@ Clicking on the burger icon
-  burgerIcon.addEventListener("click", function (e) {
-    // Add the "slideOut" class to the <nav class="mobileSlider">
-    const mobileSlider = document.querySelector("nav.mobileSlider");
-    if (mobileSlider.classList.contains("slideOnscreen")) {
-      mobileSlider.classList.remove("slideOnscreen");
-      document.querySelector("#overlay").classList.remove("reveal");
-    } else {
-      mobileSlider.classList.add("slideOnscreen");
-      document.querySelector("#overlay").classList.add("reveal");
-    }
+  window.addEventListener("resize", () => {
+    resetGamesTab();
+    resetHardwareTab();
   });
 };

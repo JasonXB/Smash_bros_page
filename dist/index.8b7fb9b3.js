@@ -487,6 +487,23 @@ function handleTabletChange(e) {
 width640.addListener(handleTabletChange);
 // Initial check
 handleTabletChange(width640);
+// Close some webpage elements whenever the user changes his/her viewport size
+window.addEventListener("resize", ()=>{
+    // Hide the overlay and mobile slider
+    document.querySelector("#overlay").classList.remove("reveal");
+    document.querySelector(".mobileSlider").classList.remove("slideOnscreen");
+    // Close the burger icon
+    document.querySelector("#burger").classList.remove("open");
+    // Remove focus from every nav__link on the mobile Slider and regular navbar
+    // prettier-ignore
+    const sliderAnchors = Array.from(document.querySelectorAll("nav.mobileSlider .nav__link, nav.mobileSlider .nav__sublink"));
+    //  prettier-ignore
+    const navAnchors = Array.from(document.querySelectorAll("nav.navbar .nav__link, nav.navbar .nav__sublink"));
+    sliderAnchors.concat(navAnchors).forEach((el)=>{
+        el.classList.remove("redFocusFilter");
+    });
+// Close the regular navbar's gamenav and hardwarenav
+});
 
 },{"medium-zoom":"lu5oF","core-js/stable":"95FYz","regenerator-runtime/runtime":"1EBPE","./clickEvents.js":"TW1yO","./hoverEvents.js":"dbfQE","./animatedZoom.js":"2Mkey","./mobileSliderEvents":"7amdc","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"lu5oF":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -14188,17 +14205,9 @@ const clickEvents = function() {
             resetHardwareTab();
         }
     };
-    //@ Clicking on the burger icon
-    burgerIcon.addEventListener("click", function(e) {
-        // Add the "slideOut" class to the <nav class="mobileSlider">
-        const mobileSlider = document.querySelector("nav.mobileSlider");
-        if (mobileSlider.classList.contains("slideOnscreen")) {
-            mobileSlider.classList.remove("slideOnscreen");
-            document.querySelector("#overlay").classList.remove("reveal");
-        } else {
-            mobileSlider.classList.add("slideOnscreen");
-            document.querySelector("#overlay").classList.add("reveal");
-        }
+    window.addEventListener("resize", ()=>{
+        resetGamesTab();
+        resetHardwareTab();
     });
 };
 
@@ -14306,7 +14315,6 @@ const allHoverEvents = function() {
         el.addEventListener("click", (i)=>{
             // Revert brightness back to normal
             el.style.setProperty("filter", "brightness(100%)");
-            console.log(el);
             // Locate exact svg to reveal, then hide it
             const svgClass = `mag${Array.from(el.classList)[1].slice(-1)}`;
             const svgIcon = document.querySelector("." + svgClass);
@@ -14352,6 +14360,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "mobileSliderEvents", ()=>mobileSliderEvents
 );
 const mobileSliderEvents = function() {
+    const mobileSlider = document.querySelector("nav.mobileSlider");
     const burgerIcon = document.querySelector("#burger");
     const gamesTab = document.querySelector(".mobileSlider .nav__link--games"); // <div> container
     const gamesNav = document.querySelector(".mobileSlider .gamenav"); // <section> container
@@ -14432,7 +14441,6 @@ const mobileSliderEvents = function() {
     //% All nav__links should divert redFocusFilter to the one clicked
     focusableElements.forEach((element)=>{
         element.addEventListener("click", function(clickedEl) {
-            console.log(element);
             // Apply the redFocusFilter class to the element
             element.classList.toggle("redFocusFilter");
             // Remove class from every other nav__link
@@ -14467,6 +14475,20 @@ const mobileSliderEvents = function() {
             el,
             paths[i]
         ];
+    });
+    //@ Clicking on the burger icon
+    burgerIcon.addEventListener("click", function(e) {
+        // Code that closes the burger, slider
+        if (mobileSlider.classList.contains("slideOnscreen")) {
+            mobileSlider.classList.remove("slideOnscreen");
+            document.querySelector("#overlay").classList.remove("reveal");
+        } else {
+            mobileSlider.classList.add("slideOnscreen");
+            document.querySelector("#overlay").classList.add("reveal");
+            // Reset the slider's gamenav and hardwarenav if you open the slider again
+            resetGamesTab();
+            resetHardwareTab();
+        }
     });
 };
 

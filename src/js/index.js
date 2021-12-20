@@ -26,3 +26,22 @@ function handleTabletChange(e) {
 width640.addListener(handleTabletChange);
 // Initial check
 handleTabletChange(width640);
+
+// Close some webpage elements whenever the user changes his/her viewport size
+window.addEventListener("resize", () => {
+  // Hide the overlay and mobile slider
+  document.querySelector("#overlay").classList.remove("reveal");
+  document.querySelector(".mobileSlider").classList.remove("slideOnscreen");
+  // Close the burger icon
+  document.querySelector("#burger").classList.remove("open");
+  // Remove focus from every nav__link on the mobile Slider and regular navbar
+  // prettier-ignore
+  const sliderAnchors= Array.from(document.querySelectorAll("nav.mobileSlider .nav__link, nav.mobileSlider .nav__sublink"));
+  //  prettier-ignore
+  const navAnchors = Array.from(document.querySelectorAll("nav.navbar .nav__link, nav.navbar .nav__sublink"));
+  sliderAnchors.concat(navAnchors).forEach((el) => {
+    el.classList.remove("redFocusFilter");
+  });
+  // Close the regular navbar's gamenav and hardwarenav
+  
+});

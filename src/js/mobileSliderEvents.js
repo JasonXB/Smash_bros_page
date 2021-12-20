@@ -1,6 +1,7 @@
 // Thanks to the class names, the mobile slider nav links glow red when hovered
 // Must code in the behavious where clicking on one adds a long lasting red highlight effect
 export const mobileSliderEvents = function () {
+  const mobileSlider = document.querySelector("nav.mobileSlider");
   const burgerIcon = document.querySelector("#burger");
   const gamesTab = document.querySelector(".mobileSlider .nav__link--games"); // <div> container
   const gamesNav = document.querySelector(".mobileSlider .gamenav"); // <section> container
@@ -91,12 +92,11 @@ export const mobileSliderEvents = function () {
     if (gamesNav.classList.contains("open")) resetGamesTab();
     if (hardwareNav.classList.contains("open")) resetHardwareTab();
     focusableElements.forEach((k) => k.classList.remove("redFocusFilter"));
-  }; 
+  };
 
   //% All nav__links should divert redFocusFilter to the one clicked
   focusableElements.forEach((element) => {
     element.addEventListener("click", function (clickedEl) {
-      console.log(element)
       // Apply the redFocusFilter class to the element
       element.classList.toggle("redFocusFilter");
       // Remove class from every other nav__link
@@ -136,5 +136,22 @@ export const mobileSliderEvents = function () {
   );
   let combined = anchors.map((el, i) => {
     return [el, paths[i]];
+  });
+
+  //@ Clicking on the burger icon
+  burgerIcon.addEventListener("click", function (e) {
+    // Code that closes the burger, slider
+    if (mobileSlider.classList.contains("slideOnscreen")) {
+      mobileSlider.classList.remove("slideOnscreen");
+      document.querySelector("#overlay").classList.remove("reveal");
+    }
+    // Code that brings slider into view and turns the burger into an X
+    else {
+      mobileSlider.classList.add("slideOnscreen");
+      document.querySelector("#overlay").classList.add("reveal");
+      // Reset the slider's gamenav and hardwarenav if you open the slider again
+      resetGamesTab();
+      resetHardwareTab();
+    }
   });
 };

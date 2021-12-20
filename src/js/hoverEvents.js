@@ -107,7 +107,6 @@ export const allHoverEvents = function () {
     el.addEventListener("click", (i) => {
       // Revert brightness back to normal
       el.style.setProperty("filter", "brightness(100%)");
-      console.log(el);
       // Locate exact svg to reveal, then hide it
       const svgClass = `mag${Array.from(el.classList)[1].slice(-1)}`;
       const svgIcon = document.querySelector("." + svgClass);
