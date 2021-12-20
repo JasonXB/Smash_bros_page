@@ -1827,6 +1827,14 @@ section.linkMenuList .menu4.clicked .slide {
   user-select: none;
 }
 
+.finalFooter--background {
+  background-color: #3e3d3d;
+  grid-row: 11/12;
+  grid-column: 1/-1;
+  position: relative;
+  z-index: -10;
+}
+
 .finalFooter {
   grid-row: 11/12;
   grid-column: 2/3;
@@ -1839,13 +1847,17 @@ section.linkMenuList .menu4.clicked .slide {
 
 .finalFooter > p:first-of-type {
   font-size: 1.6rem;
-  color: white;
   margin-bottom: 1.6rem;
   font-weight: 400;
 }
 
-.finalFooter > p:first-of-type span {
+.finalFooter > p:first-of-type a {
+  color: white;
   margin-inline: 1rem;
+}
+
+.finalFooter > p:first-of-type a:hover {
+  text-decoration: underline;
 }
 
 .finalFooter > p:last-of-type {

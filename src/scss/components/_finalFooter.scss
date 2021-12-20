@@ -1,5 +1,14 @@
 @import "../helpers/partials"; // contains scss variables and mixins
 $standardMargin: 1.6rem;
+
+// Style the gray background color beneath the footer
+.finalFooter--background {
+  background-color: #3e3d3d;
+  grid-row: 11/12;
+  grid-column: 1/-1;
+  position: relative;
+  z-index: -10; // place below the footer section
+}
 .finalFooter {
   grid-row: 11/12;
   grid-column: 2/3;
@@ -9,11 +18,15 @@ $standardMargin: 1.6rem;
   // "Contact us" and "website feedback"
   & > p:first-of-type {
     font-size: 1.6rem;
-    color: white;
+
     margin-bottom: $standardMargin;
     font-weight: 400;
-    span {
+    a {
+      color: white;
       margin-inline: 1rem;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   }
   // "@ Nintendo of America"
