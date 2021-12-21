@@ -133,3 +133,12 @@
 .mobileSlider span {
   user-select: none;
 }
+
+// This extra overlay is here for one reason:
+// Clicking it should close the mobile slider, just like hitting the burger a 2nd time would
+.mobileSlider .overlay--layer2 {
+  grid-column: 1/2;
+  background: rgba(0, 0, 0, 0);
+  position: relative;
+  z-index: 20;
+}

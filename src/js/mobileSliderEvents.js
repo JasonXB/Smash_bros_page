@@ -1,6 +1,7 @@
 // Thanks to the class names, the mobile slider nav links glow red when hovered
 // Must code in the behavious where clicking on one adds a long lasting red highlight effect
 export const mobileSliderEvents = function () {
+  const overlay = document.querySelector("#overlay");
   const mobileSlider = document.querySelector("nav.mobileSlider");
   const burgerIcon = document.querySelector("#burger");
   const gamesTab = document.querySelector(".mobileSlider .nav__link--games"); // <div> container
@@ -87,12 +88,6 @@ export const mobileSliderEvents = function () {
       el.classList.remove("redFocusFilter"); // now remove it
     });
   };
-  // Removes redFilterFocus tab from all elements it could be on
-  const removeFocusFromAll = function () {
-    if (gamesNav.classList.contains("open")) resetGamesTab();
-    if (hardwareNav.classList.contains("open")) resetHardwareTab();
-    focusableElements.forEach((k) => k.classList.remove("redFocusFilter"));
-  };
 
   //% All nav__links should divert redFocusFilter to the one clicked
   focusableElements.forEach((element) => {
@@ -143,15 +138,26 @@ export const mobileSliderEvents = function () {
     // Code that closes the burger, slider
     if (mobileSlider.classList.contains("slideOnscreen")) {
       mobileSlider.classList.remove("slideOnscreen");
-      document.querySelector("#overlay").classList.remove("reveal");
+      overlay.classList.remove("reveal");
     }
     // Code that brings slider into view and turns the burger into an X
     else {
       mobileSlider.classList.add("slideOnscreen");
-      document.querySelector("#overlay").classList.add("reveal");
+      overlay.classList.add("reveal");
       // Reset the slider's gamenav and hardwarenav if you open the slider again
       resetGamesTab();
       resetHardwareTab();
     }
   });
+  //@ Clicking on the overlay while the slider is revealed
+  document
+    .querySelector(".mobileSlider .overlay--layer2")
+    .addEventListener("click", function (e) {
+      // Hide slider, revert burger to orig shape
+      if (mobileSlider.classList.contains("slideOnscreen")) {
+        mobileSlider.classList.remove("slideOnscreen");
+        overlay.classList.remove("reveal");
+        burgerIcon.classList.remove("open");
+      }
+    });
 };
