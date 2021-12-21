@@ -19,6 +19,11 @@ export const mobileSliderEvents = function () {
   );
   //@ ——————————————————————————————————————————————————————
   // Utility functions
+  const unfocusAll = function () {
+    focusableElements.forEach((el) => {
+      el.classList.remove("redFocusFilter");
+    });
+  };
   const flipArrowDirection = function (initialSVG) {
     const svgParent = initialSVG.closest(".nav__link");
     // If arrow class="down", switch to an upward arrow SVG
@@ -139,6 +144,7 @@ export const mobileSliderEvents = function () {
     if (mobileSlider.classList.contains("slideOnscreen")) {
       mobileSlider.classList.remove("slideOnscreen");
       overlay.classList.remove("reveal");
+      unfocusAll();
     }
     // Code that brings slider into view and turns the burger into an X
     else {
@@ -158,6 +164,7 @@ export const mobileSliderEvents = function () {
         mobileSlider.classList.remove("slideOnscreen");
         overlay.classList.remove("reveal");
         burgerIcon.classList.remove("open");
+        unfocusAll();
       }
     });
 };

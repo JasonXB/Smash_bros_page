@@ -14373,6 +14373,11 @@ const mobileSliderEvents = function() {
     );
     //@ ——————————————————————————————————————————————————————
     // Utility functions
+    const unfocusAll = function() {
+        focusableElements.forEach((el)=>{
+            el.classList.remove("redFocusFilter");
+        });
+    };
     const flipArrowDirection = function(initialSVG) {
         const svgParent = initialSVG.closest(".nav__link");
         // If arrow class="down", switch to an upward arrow SVG
@@ -14476,6 +14481,7 @@ const mobileSliderEvents = function() {
         if (mobileSlider.classList.contains("slideOnscreen")) {
             mobileSlider.classList.remove("slideOnscreen");
             overlay.classList.remove("reveal");
+            unfocusAll();
         } else {
             mobileSlider.classList.add("slideOnscreen");
             overlay.classList.add("reveal");
@@ -14491,6 +14497,7 @@ const mobileSliderEvents = function() {
             mobileSlider.classList.remove("slideOnscreen");
             overlay.classList.remove("reveal");
             burgerIcon.classList.remove("open");
+            unfocusAll();
         }
     });
 };
