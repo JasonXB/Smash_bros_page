@@ -1,19 +1,22 @@
-@import "../helpers/partials";
+@import "../../helpers/partials"; // contains scss variables and mixins
 // This component will be a series of drop down menus on mobile screens
 // On desktop screens, the component will be a simple set of 3 columns
 section.linklist {
+  display: none;
+  opacity: 0;
   // Place the linklist section on the main webpage grid
   grid-row: 10/11;
   grid-column: 2/3;
   width: 100%;
-  // Do nto show it on smaller screens
-  display: none;
+  // Do not show it on smaller screens
+
   //@ DESKTOP SECTION
-  @media (min-width: 700px) {
+  @media (min-width: 770px) {
     margin-top: 6rem;
     padding: 3.6rem; // apply standard component padding
     // Make the section itself a grid and create equal width columns
     display: grid;
+    opacity: 1;
     grid-template-columns: repeat(4, 1fr);
     a {
       display: block;

@@ -141,14 +141,14 @@ object {
 main {
   display: grid;
   grid-template-columns: 4% 1fr 4%;
-  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto 500px;
+  grid-template-rows: repeat(11, auto);
   position: relative;
   z-index: 0;
 }
 
 @media (min-width: 770px) {
   main {
-    grid-template-rows: 3.9rem auto auto auto auto auto auto auto auto auto auto auto 500px;
+    grid-template-rows: 3.9rem repeat(11, auto);
   }
 }
 
@@ -329,7 +329,7 @@ main {
     grid-area: f;
   }
   .navbar .navbar2 > * {
-    margin-inline: 1.4rem;
+    margin-inline: 1.2rem;
   }
   .navbar .gamenav.open {
     background-color: rgba(255, 255, 255, 0.9);
@@ -397,6 +397,12 @@ main {
   }
 }
 
+@media (min-width: 1000px) {
+  .navbar .navbar2 > * {
+    margin-inline: 2rem;
+  }
+}
+
 .poster__background {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/images/showcase/logowall.jpg");
   grid-row: 2/3;
@@ -443,7 +449,7 @@ main {
 
 .characters {
   margin-bottom: 4.8rem;
-  margin-top: 4.8rem;
+  margin-top: 3rem;
   grid-column: 2/3;
   grid-row: 4/5;
 }
@@ -924,18 +930,6 @@ section.DLC .DLC__a--82 img {
   border-radius: 6px;
 }
 
-.showcase__div .showcase--wishlist {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.showcase__div .showcase--wishlist > span {
-  margin-left: 1.2rem;
-  font-size: 1.6rem;
-  color: #f70018;
-}
-
 .showcase {
   grid-column: 2/3;
   grid-row: 3/4;
@@ -1002,16 +996,6 @@ section.DLC .DLC__a--82 img {
   .showcase .showcase__div--desktop .showcase--block2 > p {
     font-size: 1.6rem;
     margin-bottom: 1.6rem;
-  }
-  .showcase .showcase__div--desktop .showcase--wishlist {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .showcase .showcase__div--desktop .showcase--wishlist > span {
-    margin-left: 1.2rem;
-    font-size: 1.6rem;
-    color: #f70018;
   }
 }
 
@@ -1503,17 +1487,19 @@ section.DLC .DLC__a--82 img {
 }
 
 section.linklist {
+  display: none;
+  opacity: 0;
   grid-row: 10/11;
   grid-column: 2/3;
   width: 100%;
-  display: none;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 770px) {
   section.linklist {
     margin-top: 6rem;
     padding: 3.6rem;
     display: grid;
+    opacity: 1;
     grid-template-columns: repeat(4, 1fr);
   }
   section.linklist a {
@@ -1572,10 +1558,6 @@ section.linkMenuList label {
   background-color: #fafafa;
   border-top: 4px solid #dedede;
   justify-content: space-between;
-}
-
-section.linkMenuList .menu4 {
-  border-bottom: 4px solid #dedede;
 }
 
 section.linkMenuList .slide {

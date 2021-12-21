@@ -1,6 +1,6 @@
-@import "../helpers/partials"; // contains scss variables and mixins
-@import "../helpers/burger"; // contains styling for burger icon
-@import "../helpers/navbar"; //  contains scss variables
+@import "../../helpers/partials"; // contains scss variables and mixins
+@import "../../helpers/burger"; // contains styling for burger icon
+@import "../../helpers/navbar"; //  contains scss variables
 
 // Reveal the gamenav or hardwarenav if it gets assigned the "open" class
 // Clicking "Games ▼" and "Hardware ▼" tabs will give gamenav and hardwarenav this class

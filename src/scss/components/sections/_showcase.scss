@@ -1,5 +1,5 @@
-@import "../helpers/partials";
-@import "../helpers/showcase";
+@import "../../helpers/partials";
+@import "../../helpers/showcase";
 
 //@ MOBILE CODE:
 .showcase__div--desktop {
@@ -26,12 +26,7 @@
   & > a {
     @include styleDigitalButton();
   }
-  // "Add to wishlist"
-  .showcase--wishlist {
-    @include styleWishlist;
-  }
 }
-
 
 //^ MAIN PARENT CONTAINER
 .showcase {
@@ -93,10 +88,6 @@
         & > p {
           @include style300Pts();
         }
-      }
-      // Add to Wishlist
-      .showcase--wishlist {
-        @include styleWishlist;
       }
     }
   }

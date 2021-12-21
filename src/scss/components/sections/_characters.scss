@@ -1,11 +1,11 @@
-@import "../helpers/partials";
+@import "../../helpers/partials";
 
 //^ Main <section> parent container
 .characters {
   margin-bottom: 4.8rem;
   //@ MOBILE STYLING:
   // Position this section onto the main webpage grid
-  margin-top: 4.8rem;
+  margin-top: 3rem;
   grid-column: 2/3;
   grid-row: 4/5;
   // "New characters and stages join the entire legacy roster"

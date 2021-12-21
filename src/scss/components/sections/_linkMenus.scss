@@ -1,4 +1,4 @@
-@import "../helpers/partials";
+@import "../../helpers/partials"; // contains scss variables and mixins
 $menuBlue: rgb(22, 96, 160);
 
 section.linkMenuList {
@@ -18,9 +18,6 @@ section.linkMenuList {
     background-color: #fafafa;
     border-top: 4px solid #dedede;
     justify-content: space-between;
-  }
-  .menu4 {
-    border-bottom: 4px solid #dedede;
   }
 
   .slide {

@@ -1,6 +1,6 @@
-@import "../helpers/partials"; // contains scss variables and mixins
-@import "../helpers/burger"; // contains styling for burger icon
-@import "../helpers/navbar"; //  contains scss variables
+@import "../../helpers/partials"; // contains scss variables and mixins
+@import "../../helpers/burger"; // contains styling for burger icon
+@import "../../helpers/navbar"; //  contains scss variables
 
 //@ MOBILE STYLING AREA 1
 .navbar__object--nintendo {
@@ -124,7 +124,7 @@
       }
       // Place a margin between each nav2 anchor on
       & > * {
-        margin-inline: 1.4rem;
+        margin-inline: 1.2rem;
       }
     }
     //^ STYLING GAMENAV- navbar row 3 option 1 which is hidden by default
@@ -192,5 +192,11 @@
     &.slideDown {
       transform: translateY(0);
     } // slide back up to regular position
+  }
+  @media (min-width: 1000px) {
+    // Spread out the nav__links
+    .navbar2 > * {
+      margin-inline: 2rem;
+    }
   }
 }
