@@ -1,5 +1,3 @@
-import mediumZoom from "medium-zoom";
-//^ The following code is messing up for some reason, halting the remaining JS code
 if (module.hot) module.hot.accept(); // "enables hot module replacement"
 import "core-js/stable"; // "enables polyfills"
 import "regenerator-runtime/runtime"; //"enables polyfills for async JS"
@@ -43,5 +41,4 @@ window.addEventListener("resize", () => {
     el.classList.remove("redFocusFilter");
   });
   // Close the regular navbar's gamenav and hardwarenav
-  
 });

@@ -16,8 +16,8 @@ export const animatedZoom = function () {
 };
 
 //@ HOW TO MAKE ALL IMAGES THE SAME SIZE WHEN ZOOMED INTO
-/* 
 
+/* 
 1. Take each image and resize them to the same width while maintaining their original ratio
    Use this tool: https://redketchup.io/image-resizer
 

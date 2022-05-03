@@ -50,7 +50,7 @@ export const allHoverEvents = function () {
       // Undo the text recoloring
       parentContainer.lastElementChild.style.color = textGray; // targets <a> tags
       parentContainer.style.color = textGray; // targets <p> tags
-      // Revert background color to white 
+      // Revert background color to white
       const svgContainer = Array.from(parentContainer.children)[0];
       svgContainer.style.backgroundColor = "white";
       // Revert SVG color to a dark gray
