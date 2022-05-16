@@ -1,5 +1,5 @@
 export const allHoverEvents = function () {
-  const nintendoRed = "#f70018";
+  const nintendoRed = "#ab0011";
   const textGray = "#484848";
   //% Any nav__link
   const navLinks = Array.from(document.querySelectorAll(".nav__link")); // all nav__link 's

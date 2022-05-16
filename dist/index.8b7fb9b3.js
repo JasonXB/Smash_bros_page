@@ -13600,7 +13600,7 @@ const clickEvents = function() {
         flipArrowDirection(gamesArrow);
         // Apply filter class to gamesTab, and apply a border on the bottom
         gamesTab.classList.add("redFocusFilter");
-        gamesTab.style.borderBottom = "3px solid #f70018";
+        gamesTab.style.borderBottom = "3px solid #ab0011";
         // Remove the class from all other nav__links
         resetHardwareTab();
         focusableElements.forEach((el)=>{
@@ -13614,7 +13614,7 @@ const clickEvents = function() {
         flipArrowDirection(hardwareArrow);
         // Apply filter class to hardwareTab, and apply a border on the bottom
         hardwareTab.classList.add("redFocusFilter");
-        hardwareTab.style.borderBottom = "3px solid #f70018";
+        hardwareTab.style.borderBottom = "3px solid #ab0011";
         // Remove the class from all other nav__links
         resetGamesTab();
         focusableElements.forEach((el)=>{
@@ -13754,7 +13754,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "allHoverEvents", ()=>allHoverEvents
 );
 const allHoverEvents = function() {
-    const nintendoRed = "#f70018";
+    const nintendoRed = "#ab0011";
     const textGray = "#484848";
     //% Any nav__link
     const navLinks = Array.from(document.querySelectorAll(".nav__link")); // all nav__link 's

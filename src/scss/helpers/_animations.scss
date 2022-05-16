@@ -1,13 +1,13 @@
 // This class gets toggled when you hover/leave over nav__links in the navbar
 .redFilter {
-  filter: invert(10%) sepia(86%) saturate(4999%) hue-rotate(348deg)
-    brightness(116%) contrast(114%);
+  filter: invert(13%) sepia(84%) saturate(5635%) hue-rotate(348deg)
+    brightness(66%) contrast(109%);
 } // Turns SVG and text red (use for SVG objects only)
 
 // This class gets added when you click on a "games" or "hardware" tab to focus it
 .redFocusFilter {
-  filter: invert(10%) sepia(86%) saturate(4999%) hue-rotate(348deg)
-    brightness(116%) contrast(114%);
+  filter: invert(13%) sepia(84%) saturate(5635%) hue-rotate(348deg)
+    brightness(66%) contrast(109%);
 } // Turns SVG and text red (use for SVG objects only)
 
 // Push animation on hover
@@ -80,7 +80,6 @@
 }
 // give an element the hvr-icon-grow class
 // When that class is hovered, focused, or active, apply the above behaviour
-
 
 #overlay {
   // Hide overlay by default
