@@ -1,6 +1,7 @@
 export const allHoverEvents = function () {
   const nintendoRed = "#ab0011";
   const textGray = "#484848";
+  const beigeHover = "#f5f5dd";
   //% Any nav__link
   const navLinks = Array.from(document.querySelectorAll(".nav__link")); // all nav__link 's
   navLinks.forEach((el) => {
@@ -34,15 +35,9 @@ export const allHoverEvents = function () {
     el.addEventListener("mouseenter", (e) => {
       const parentContainer = e.target.closest("a");
       parentContainer.style.cursor = "pointer"; // make hands appear on hover
-      // Color text red on hover
-      parentContainer.lastElementChild.style.color = nintendoRed; // style anchors red
-      parentContainer.style.color = nintendoRed; // style p tags red
-      // Color the background behind the SVG red
+      // Color the background behind the SVG beige
       const svgContainer = Array.from(parentContainer.children)[0];
-      svgContainer.style.backgroundColor = nintendoRed;
-      // Color the SVG itself white
-      const svgIcon = svgContainer.children[0];
-      svgIcon.children[0].style.fill = "white";
+      svgContainer.style.backgroundColor = beigeHover;
     });
     // Return SVG's back to normal when you exit the parent container
     el.addEventListener("mouseleave", (e) => {
@@ -53,9 +48,6 @@ export const allHoverEvents = function () {
       // Revert background color to white
       const svgContainer = Array.from(parentContainer.children)[0];
       svgContainer.style.backgroundColor = "white";
-      // Revert SVG color to a dark gray
-      const svgIcon = svgContainer.children[0];
-      svgIcon.children[0].style.fill = textGray;
     });
   });
 
@@ -70,10 +62,9 @@ export const allHoverEvents = function () {
     el.addEventListener("mouseenter", (e) => {
       const parentContainer = e.target.closest("a");
       parentContainer.style.cursor = "pointer"; // make hands appear on hover
-      parentContainer.lastElementChild.style.color = nintendoRed; // make spans red
-      // Make the background red
+      // Make the background beige
       const svgElement = parentContainer.firstElementChild;
-      svgElement.style.backgroundColor = nintendoRed;
+      svgElement.style.backgroundColor = beigeHover;
     });
     // Undo the above changes when you exit the nav__link container
     el.addEventListener("mouseleave", (e) => {

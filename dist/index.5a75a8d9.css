@@ -1,11 +1,9 @@
 .redFilter {
-  filter: invert(13%) sepia(84%) saturate(5635%) hue-rotate(348deg)
-    brightness(66%) contrast(109%);
+  filter: invert(13%) sepia(84%) saturate(5635%) hue-rotate(348deg) brightness(66%) contrast(109%);
 }
 
 .redFocusFilter {
-  filter: invert(13%) sepia(84%) saturate(5635%) hue-rotate(348deg)
-    brightness(66%) contrast(109%);
+  filter: invert(13%) sepia(84%) saturate(5635%) hue-rotate(348deg) brightness(66%) contrast(109%);
 }
 
 @keyframes hvr-push {
@@ -411,8 +409,7 @@ main {
 }
 
 .poster__background {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("logowall.f847216d.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("logowall.f847216d.jpg");
   grid-row: 2/3;
   grid-column: 1/-1;
   z-index: -15;
@@ -533,8 +530,7 @@ main {
 .DLC__background {
   grid-column: 1/-1;
   grid-row: 6/7;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("logowall.f847216d.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("logowall.f847216d.jpg");
 }
 
 section.DLC {
@@ -769,10 +765,7 @@ section.DLC .DLC__a--82 img {
   gap: 0.8rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
-  grid-template-areas:
-    "a a"
-    "b c"
-    "d e";
+  grid-template-areas: "a a" "b c" "d e";
 }
 
 .screenshots--one > video {
@@ -812,9 +805,7 @@ section.DLC .DLC__a--82 img {
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  grid-template-areas:
-    "a a"
-    "b b";
+  grid-template-areas: "a a" "b b";
 }
 
 .screenshots--two > img:nth-last-of-type(1),
@@ -841,8 +832,7 @@ section.DLC .DLC__a--82 img {
 .screenshots--background {
   grid-row: 4/5;
   grid-column: 1 / -1;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("logowall.f847216d.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("logowall.f847216d.jpg");
 }
 
 .screenshots {
@@ -862,9 +852,7 @@ section.DLC .DLC__a--82 img {
 @media (min-width: 770px) {
   .screenshots .screenshots--one {
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-areas:
-      "a b c"
-      "a d e";
+    grid-template-areas: "a b c" "a d e";
   }
   .screenshots .screenshots--one > video {
     grid-area: a;
@@ -970,9 +958,7 @@ section.DLC .DLC__a--82 img {
     display: grid;
     grid-template-columns: auto 1fr auto auto;
     grid-template-rows: auto auto;
-    grid-template-areas:
-      "a b c d"
-      "e e e e";
+    grid-template-areas: "a b c d" "e e e e";
   }
   .showcase .showcase__div--desktop .showcase--block1 {
     grid-area: a;
@@ -1049,11 +1035,7 @@ section.DLC .DLC__a--82 img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "e e"
-      "a a"
-      "b c"
-      "d d";
+    grid-template-areas: "e e" "a a" "b c" "d d";
   }
   .game-details > h2:first-of-type {
     margin-bottom: 0;
@@ -1336,9 +1318,7 @@ section.DLC .DLC__a--82 img {
     display: grid;
     grid-template-columns: 16% 40% 20%;
     grid-template-rows: repeat(2, auto);
-    grid-template-areas:
-      "a b c"
-      "d e .";
+    grid-template-areas: "a b c" "d e .";
     gap: 3.2rem;
     align-items: center;
   }
@@ -1947,5 +1927,4 @@ section.linkMenuList .menu4.clicked .slide {
 }
 
 /*# sourceMappingURL=global.css.map */
-
 /*# sourceMappingURL=index.5a75a8d9.css.map */

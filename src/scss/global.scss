@@ -48,7 +48,7 @@ button {
   display: block;
 }
 svg,
-object{
+object {
   pointer-events: none;
 }
 
@@ -82,3 +82,5 @@ main {
   "./components/sections/related", "./components/sections/linklist",
   "./components/sections/linkMenus", "./components/sections/mobileSlider",
   "./components/sections/finalFooter";
+
+
