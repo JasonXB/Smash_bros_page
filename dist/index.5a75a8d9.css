@@ -409,7 +409,7 @@ main {
 }
 
 .poster__background {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("logowall.f847216d.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("logowall.21d51b63.webp");
   grid-row: 2/3;
   grid-column: 1/-1;
   z-index: -15;
@@ -530,7 +530,7 @@ main {
 .DLC__background {
   grid-column: 1/-1;
   grid-row: 6/7;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("logowall.f847216d.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("logowall.21d51b63.webp");
 }
 
 section.DLC {
@@ -832,7 +832,7 @@ section.DLC .DLC__a--82 img {
 .screenshots--background {
   grid-row: 4/5;
   grid-column: 1 / -1;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("logowall.f847216d.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("logowall.21d51b63.webp");
 }
 
 .screenshots {

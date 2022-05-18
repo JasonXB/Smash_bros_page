@@ -10,7 +10,7 @@ $text-gray: #484848;
 // Mixins
 @mixin wallpaper {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("/src/images/showcase/logowall.jpg");
+    url("/src/images/showcase/logowall.webp");
 }
 @mixin flex-row {
   display: flex;
