@@ -52,6 +52,13 @@
     color: white;
     border-radius: 0.5rem;
   }
+  & > div > a:nth-child(1) {
+    margin-bottom: 0.8rem;
+    @media (min-width: 320px) {
+      margin-bottom: 0;
+    }
+  }
+
   //@ DESKTOP STYLING:
   @media (min-width: 570px) {
     & > p:nth-of-type(2) {

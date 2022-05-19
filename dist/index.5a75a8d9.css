@@ -144,7 +144,7 @@ object {
 
 main {
   display: grid;
-  grid-template-columns: 4% 1fr 4%;
+  grid-template-columns: 2.5% 95% 2.5%;
   grid-template-rows: repeat(11, auto);
   position: relative;
   z-index: 0;
@@ -1302,6 +1302,16 @@ section.DLC .DLC__a--82 img {
   background: #ab0011;
   color: white;
   border-radius: 0.5rem;
+}
+
+.online > div > a:nth-child(1) {
+  margin-bottom: 0.8rem;
+}
+
+@media (min-width: 320px) {
+  .online > div > a:nth-child(1) {
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: 570px) {

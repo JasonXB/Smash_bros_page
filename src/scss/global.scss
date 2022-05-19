@@ -55,7 +55,7 @@ object {
 // Set the main layout/grid for the entire webpage
 main {
   display: grid;
-  grid-template-columns: 4% 1fr 4%;
+  grid-template-columns: 2.5% 95% 2.5%;
   grid-template-rows: repeat(11, auto);
   position: relative;
   z-index: 0;
@@ -82,5 +82,3 @@ main {
   "./components/sections/related", "./components/sections/linklist",
   "./components/sections/linkMenus", "./components/sections/mobileSlider",
   "./components/sections/finalFooter";
-
-
