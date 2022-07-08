@@ -1,7 +1,7 @@
 
 # Super Smash Bros Landing Page
 
-## TOOLS USED DURING CONSTRUCTION
+## LANGUAGES & TOOLS USED
 
 - HTML, CSS, JavaScript
 - Parcel, NPM, medium-zoom library
@@ -14,8 +14,6 @@ This webpage was inspired by Nintendo's sales page for Super Smash Bros Ultimate
 - Check this game's ESRB rating and browse other titles that fans of this series enjoy
 
 ![alt text](https://i.postimg.cc/3N7BtNwP/main.png)
-
-![alt text](https://i.postimg.cc/4x38CY1G/dlc.png)
 
 ![alt text](https://i.postimg.cc/K8cWZqxd/game-info.png)
 
