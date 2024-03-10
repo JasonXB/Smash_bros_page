@@ -1,6 +1,6 @@
 {
   "name": "smash_ultimate",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Super Smash Bros Ultimate ",
   "default": "index.html",
   "scripts": {
@@ -8,15 +8,15 @@
     "dev": "parcel index.html",
     "build": "next build"
   },
-  "author": "Jason2B3",
+  "author": "JasonxDev",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "2.0.1",
-    "sass": "1.43.5"
+    "parcel": "2.12.0",
+    "sass": "1.71.1"
   },
   "dependencies": {
-    "core-js": "3.19.1",
-    "medium-zoom": "1.0.6",
-    "regenerator-runtime": "0.13.9"
+    "core-js": "^3.33.3",
+    "medium-zoom": "1.1.0",
+    "regenerator-runtime": "0.14.1"
   }
 }
