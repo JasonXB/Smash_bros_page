@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Super Smash Bros Ultimate ",
   "default": "index.html",
+  "source": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html",
